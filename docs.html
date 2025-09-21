@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stroku Documentation - Complete Setup Guide | Android & Roku Apps</title>
+    <meta name="description" content="Complete Stroku setup guide: Install Android sender app and Roku receiver channel. Detailed documentation for streaming from Stremio to Roku devices.">
+    <meta name="google-site-verification" content="tgZSZq9QmxiyRIkF5OPrxZ0U2ZnXHum8BI01lFsAZu0" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://stroku.netlify.app/docs.html">
+    <meta property="og:title" content="Stroku Documentation - Complete Setup Guide">
+    <meta property="og:description" content="Complete Stroku setup guide: Install Android sender app and Roku receiver channel. Detailed documentation for streaming from Stremio to Roku devices.">
+    <meta property="og:image" content="https://stroku.netlify.app/assets/icon.png">
+    <meta property="og:site_name" content="Stroku">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https://stroku.netlify.app/docs.html">
+    <meta property="twitter:title" content="Stroku Documentation - Complete Setup Guide">
+    <meta property="twitter:description" content="Complete Stroku setup guide: Install Android sender app and Roku receiver channel. Detailed documentation for streaming from Stremio to Roku devices.">
+    <meta property="twitter:image" content="https://stroku.netlify.app/assets/icon.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://stroku.netlify.app/docs.html">
+    
+    <!-- Structured Data for Documentation -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Stroku Documentation - Complete Setup Guide",
+        "description": "Complete Stroku setup guide: Install Android sender app and Roku receiver channel. Detailed documentation for streaming from Stremio to Roku devices.",
+        "author": {
+            "@type": "Organization",
+            "name": "Stroku",
+            "url": "https://stroku.netlify.app/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Stroku",
+            "url": "https://stroku.netlify.app/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://stroku.netlify.app/assets/icon.png"
+            }
+        },
+        "datePublished": "2026-01-20",
+        "dateModified": "2026-01-20",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://stroku.netlify.app/docs.html"
+        },
+        "about": {
+            "@type": "SoftwareApplication",
+            "name": "Stroku",
+            "applicationCategory": "MultimediaApplication"
+        }
+    }
+    </script>
+    <link rel="icon" type="image/png" href="assets/icon.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="assets/icon.png" alt="Stroku - Stremio to Roku streaming app logo" class="nav-logo">
+                <span class="nav-title">Stroku</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="docs.html" class="nav-link active">Documentation</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+                <a href="mailto:gabrielsmith1874@gmail.com" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Documentation Content -->
+    <section class="docs-content">
+        <div class="container">
+            <div class="docs-layout">
+                <!-- Sidebar Navigation -->
+                <aside class="docs-sidebar">
+                    <nav class="docs-nav">
+                        <h3>Quick Start</h3>
+                        <ul>
+                            <li><a href="#overview" class="docs-nav-link">Overview</a></li>
+                            <li><a href="#requirements" class="docs-nav-link">Requirements</a></li>
+                            <li><a href="#installation" class="docs-nav-link">Installation</a></li>
+                        </ul>
+                        
+                        <h3>Android App</h3>
+                        <ul>
+                            <li><a href="#android-setup" class="docs-nav-link">Setup</a></li>
+                            <li><a href="#android-usage" class="docs-nav-link">Usage</a></li>
+                            <li><a href="#android-features" class="docs-nav-link">Features</a></li>
+                        </ul>
+                        
+                        <h3>Roku Channel</h3>
+                        <ul>
+                            <li><a href="#roku-setup" class="docs-nav-link">Setup</a></li>
+                            <li><a href="#roku-developer" class="docs-nav-link">Developer Mode</a></li>
+                            <li><a href="#roku-sideload" class="docs-nav-link">Sideloading</a></li>
+                        </ul>
+                        
+                        <h3>Advanced</h3>
+                        <ul>
+                            <li><a href="#troubleshooting" class="docs-nav-link">Troubleshooting</a></li>
+                            <li><a href="#network-config" class="docs-nav-link">Network Config</a></li>
+                            <li><a href="#development" class="docs-nav-link">Development</a></li>
+                        </ul>
+                    </nav>
+                </aside>
+
+                <!-- Main Documentation -->
+                <main class="docs-main">
+                    <div class="docs-header">
+                        <h1>Stroku Documentation</h1>
+                        <p>Complete guide to setting up and using Stroku Sender and Receiver</p>
+                    </div>
+
+                    <!-- Overview -->
+                    <section id="overview" class="docs-section">
+                        <h2>Overview</h2>
+                        <p>Stroku consists of two components that work together to stream content from Stremio to your Roku device:</p>
+                        
+                        <div class="component-grid">
+                            <div class="component-card">
+                                <div class="component-icon">
+                                    <i class="fab fa-android"></i>
+                                </div>
+                                <h3>Stroku Sender</h3>
+                                <p>Android app that discovers Roku devices and sends streaming commands</p>
+                                <ul>
+                                    <li>Device discovery</li>
+                                    <li>Stream initiation</li>
+                                    <li>User interface</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="component-card">
+                                <div class="component-icon">
+                                    <i class="fas fa-tv"></i>
+                                </div>
+                                <h3>Stroku Receiver</h3>
+                                <p>Roku channel that receives and plays streaming content</p>
+                                <ul>
+                                    <li>Stream reception</li>
+                                    <li>Video playback</li>
+                                    <li>Network communication</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Requirements -->
+                    <section id="requirements" class="docs-section">
+                        <h2>System Requirements</h2>
+                        
+                        <div class="requirements-grid">
+                            <div class="requirement-item">
+                                <h3><i class="fab fa-android"></i> Android Device</h3>
+                                <ul>
+                                    <li>Android 6.0 (API 23) or higher</li>
+                                    <li>WiFi connectivity</li>
+                                    <li>50MB+ free storage</li>
+                                    <li>Allow installation from unknown sources</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="requirement-item">
+                                <h3><i class="fas fa-tv"></i> Roku Device</h3>
+                                <ul>
+                                    <li>Roku OS 9.0 or higher</li>
+                                    <li>WiFi connectivity (same network as Android)</li>
+                                    <li>Developer Mode enabled</li>
+                                    <li>HD, FHD, or UHD supported models</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="requirement-item">
+                                <h3><i class="fas fa-wifi"></i> Network</h3>
+                                <ul>
+                                    <li>WiFi network with internet access</li>
+                                    <li>Both devices on same network</li>
+                                    <li>Router with device communication enabled</li>
+                                    <li>Stable connection for smooth streaming</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Installation -->
+                    <section id="installation" class="docs-section">
+                        <h2>Installation Overview</h2>
+                        <p>Installation involves setting up both the Android app and Roku channel. Follow these steps in order:</p>
+                        
+                        <div class="install-steps">
+                            <div class="install-step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h3>Enable Roku Developer Mode</h3>
+                                    <p>Required for sideloading the Stroku Receiver channel</p>
+                                </div>
+                            </div>
+                            
+                            <div class="install-step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h3>Install Stroku Receiver on Roku</h3>
+                                    <p>Sideload the channel using Roku Developer tools</p>
+                                </div>
+                            </div>
+                            
+                            <div class="install-step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h3>Install Stroku Sender on Android</h3>
+                                    <p>Download and install the APK on your device</p>
+                                </div>
+                            </div>
+                            
+                            <div class="install-step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h3>Connect and Test</h3>
+                                    <p>Ensure both apps can discover and communicate</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Android Setup -->
+                    <section id="android-setup" class="docs-section">
+                        <h2>Android App Setup</h2>
+                        
+                        <h3>Download and Install</h3>
+                        <div class="code-block">
+                            <h4>Step 1: Download APK</h4>
+                            <p>Download the latest Stroku Sender APK from our GitHub releases:</p>
+                            <a href="https://github.com/gabrielsmith1874/StreamBridge/releases/latest" target="_blank" class="download-link">
+                                <i class="fas fa-download"></i>
+                                Download Stroku Sender APK
+                            </a>
+                        </div>
+                        
+                        <div class="code-block">
+                            <h4>Step 2: Enable Unknown Sources</h4>
+                            <p>Before installing, enable installation from unknown sources:</p>
+                            <ol>
+                                <li>Go to <strong>Settings → Security</strong> (or <strong>Settings → Apps & notifications → Special app access</strong> on newer Android)</li>
+                                <li>Enable <strong>"Unknown sources"</strong> or <strong>"Install unknown apps"</strong></li>
+                                <li>Grant permission to your file manager or browser</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="code-block">
+                            <h4>Step 3: Install APK</h4>
+                            <ol>
+                                <li>Open the downloaded APK file</li>
+                                <li>Tap <strong>"Install"</strong> when prompted</li>
+                                <li>Wait for installation to complete</li>
+                                <li>Tap <strong>"Open"</strong> to launch the app</li>
+                            </ol>
+                        </div>
+                    </section>
+
+                    <!-- Android Usage -->
+                    <section id="android-usage" class="docs-section">
+                        <h2>Using the Android App</h2>
+                        
+                        <h3>First Launch</h3>
+                        <p>When you first open Stroku Sender:</p>
+                        <ol>
+                            <li>The app will scan for Roku devices on your network</li>
+                            <li>Make sure your Roku has the Stroku Receiver channel running</li>
+                            <li>Discovered devices will appear in the "Available Devices" section</li>
+                        </ol>
+                        
+                        <h3>Main Features</h3>
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <h4><i class="fas fa-sync"></i> Refresh</h4>
+                                <p>Manually scan for Roku devices on your network</p>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <h4><i class="fas fa-keyboard"></i> Manual IP</h4>
+                                <p>Enter your Roku's IP address manually if auto-discovery fails</p>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <h4><i class="fas fa-play"></i> Test</h4>
+                                <p>Send a test video to verify the connection is working</p>
+                            </div>
+                        </div>
+                        
+                        <h3>Streaming from Stremio (Recommended Method)</h3>
+                        <p>The easiest way to stream content from Stremio to your Roku using the integrated workflow:</p>
+                        
+                        <div class="code-block">
+                            <h4>Step 1: Find Content in Stremio</h4>
+                            <ol>
+                                <li>Open <strong>Stremio</strong> on your Android device</li>
+                                <li>Browse or search for the content you want to watch</li>
+                                <li>Click on the content to view details</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="code-block">
+                            <h4>Step 2: Use "Open with External App"</h4>
+                            <ol>
+                                <li>Click the <strong>Play</strong> button on your chosen episode/movie</li>
+                                <li>When the video player loads, look for playback options</li>
+                                <li>Tap the <strong>"Open with external app"</strong> or share button</li>
+                                <li>From the app selection menu, choose <strong>"Stroku Sender"</strong></li>
+                            </ol>
+                        </div>
+                        
+                        <div class="info-box">
+                            <i class="fas fa-info-circle"></i>
+                            <strong>Note:</strong> If you don't see "Stroku Sender" in the list, make sure it's properly installed and that Android recognizes it as a video handler app.
+                        </div>
+                        
+                        <div class="code-block">
+                            <h4>Step 3: Cast to Roku</h4>
+                            <ol>
+                                <li>Stroku Sender will automatically open with the streaming URL loaded</li>
+                                <li>Your available Roku devices will be displayed</li>
+                                <li>Select your Roku device from the list</li>
+                                <li>The video will begin streaming to your Roku immediately</li>
+                            </ol>
+                        </div>
+                    </section>
+
+                    <!-- Android Features -->
+                    <section id="android-features" class="docs-section">
+                        <h2>Android App Features</h2>
+                        
+                        <div class="features-detailed">
+                            <div class="feature-detail">
+                                <h3>Device Discovery</h3>
+                                <p>Automatic discovery of Roku devices using network scanning and broadcast protocols.</p>
+                                <ul>
+                                    <li>Automatic network scanning</li>
+                                    <li>Device information display</li>
+                                    <li>Connection status indicators</li>
+                                    <li>Manual IP entry fallback</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="feature-detail">
+                                <h3>Modern UI</h3>
+                                <p>Clean, Material Design interface with dark mode support.</p>
+                                <ul>
+                                    <li>Material Design 3 components</li>
+                                    <li>Automatic dark/light theme</li>
+                                    <li>Responsive layout for all screen sizes</li>
+                                    <li>Intuitive navigation</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="feature-detail">
+                                <h3>Network Communication</h3>
+                                <p>Reliable communication protocols for sending streaming commands.</p>
+                                <ul>
+                                    <li>HTTP-based communication</li>
+                                    <li>Error handling and retry logic</li>
+                                    <li>Connection status monitoring</li>
+                                    <li>Automatic device reconnection</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Roku Setup -->
+                    <section id="roku-setup" class="docs-section">
+                        <h2>Roku Channel Setup</h2>
+                        <p>Setting up the Roku channel requires enabling Developer Mode and sideloading the channel.</p>
+                        
+                        <div class="warning-box">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <strong>Important:</strong> You need a free Roku Developer account to sideload channels. This is completely free and takes just a few minutes to set up.
+                        </div>
+                    </section>
+
+                    <!-- Roku Developer Mode -->
+                    <section id="roku-developer" class="docs-section">
+                        <h2>Enabling Developer Mode</h2>
+                        
+                        <h3>Create Developer Account</h3>
+                        <ol>
+                            <li>Go to <a href="https://developer.roku.com" target="_blank">developer.roku.com</a></li>
+                            <li>Click <strong>"Sign Up"</strong> and create a free account</li>
+                            <li>Verify your email address</li>
+                            <li>Complete your developer profile</li>
+                        </ol>
+                        
+                        <h3>Enable Developer Mode on Roku</h3>
+                        <ol>
+                            <li>On your Roku, go to <strong>Settings → System → Advanced system settings</strong></li>
+                            <li>Select <strong>"Developer options"</strong></li>
+                            <li>Select <strong>"Installer"</strong></li>
+                            <li>Follow the prompts to enable Developer Mode</li>
+                            <li>Note down the IP address and credentials shown</li>
+                        </ol>
+                        
+                        <div class="info-box">
+                            <i class="fas fa-info-circle"></i>
+                            <strong>Note:</strong> Developer Mode will display an IP address (like 192.168.1.100) and login credentials. You'll need these for sideloading.
+                        </div>
+                    </section>
+
+                    <!-- Roku Sideloading -->
+                    <section id="roku-sideload" class="docs-section">
+                        <h2>Sideloading Stroku Receiver</h2>
+                        
+                        <h3>Download Channel Package</h3>
+                        <ol>
+                            <li>Download the latest Stroku Receiver package from GitHub:</li>
+                            <li><a href="https://github.com/gabrielsmith1874/StreamCast-Receiver/releases/latest" target="_blank" class="download-link">
+                                <i class="fas fa-download"></i>
+                                Download Stroku Receiver
+                            </a></li>
+                            <li>Extract the ZIP file if needed</li>
+                        </ol>
+                        
+                        <h3>Upload via Web Interface</h3>
+                        <ol>
+                            <li>Open a web browser on your computer</li>
+                            <li>Navigate to your Roku's IP address (e.g., http://192.168.1.100)</li>
+                            <li>Log in with the credentials from Developer Mode setup</li>
+                            <li>Click <strong>"Browse"</strong> and select the Stroku Receiver package</li>
+                            <li>Click <strong>"Install"</strong> and wait for completion</li>
+                            <li>The channel will appear on your Roku home screen</li>
+                        </ol>
+                        
+                        <div class="success-box">
+                            <i class="fas fa-check-circle"></i>
+                            <strong>Success!</strong> Once installed, launch the Stroku Receiver channel on your Roku. It should display "Ready to Cast" and show your network information.
+                        </div>
+                    </section>
+
+                    <!-- Troubleshooting -->
+                    <section id="troubleshooting" class="docs-section">
+                        <h2>Troubleshooting</h2>
+                        
+                        <h3>Common Issues</h3>
+                        
+                        <div class="troubleshoot-item">
+                            <h4>Roku not discovered</h4>
+                            <div class="solution">
+                                <p><strong>Symptoms:</strong> Android app shows "No devices found"</p>
+                                <p><strong>Solutions:</strong></p>
+                                <ul>
+                                    <li>Ensure both devices are on the same WiFi network</li>
+                                    <li>Make sure Stroku Receiver is running on Roku</li>
+                                    <li>Try manual IP entry</li>
+                                    <li>Check router settings for AP isolation</li>
+                                    <li>Restart both devices</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="troubleshoot-item">
+                            <h4>Video won't play</h4>
+                            <div class="solution">
+                                <p><strong>Symptoms:</strong> Video starts but doesn't play or shows error</p>
+                                <p><strong>Solutions:</strong></p>
+                                <ul>
+                                    <li>Check video format compatibility</li>
+                                    <li>Ensure stable network connection</li>
+                                    <li>Try a different video source</li>
+                                    <li>Restart the Roku channel</li>
+                                    <li>Check Stremio URL validity</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="troubleshoot-item">
+                            <h4>Poor streaming quality</h4>
+                            <div class="solution">
+                                <p><strong>Symptoms:</strong> Video stutters, buffers, or low quality</p>
+                                <p><strong>Solutions:</strong></p>
+                                <ul>
+                                    <li>Move closer to WiFi router</li>
+                                    <li>Use 5GHz WiFi if available</li>
+                                    <li>Close other bandwidth-heavy apps</li>
+                                    <li>Check network speed</li>
+                                    <li>Try lower quality content</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Network Configuration -->
+                    <section id="network-config" class="docs-section">
+                        <h2>Network Configuration</h2>
+                        
+                        <h3>Router Settings</h3>
+                        <p>For optimal performance, ensure your router is configured correctly:</p>
+                        
+                        <div class="config-item">
+                            <h4>Disable AP Isolation</h4>
+                            <p>AP (Access Point) Isolation prevents devices from communicating with each other. This must be disabled for Stroku to work.</p>
+                            <ul>
+                                <li>Log into your router's admin panel</li>
+                                <li>Look for "AP Isolation", "Client Isolation", or "WiFi Isolation"</li>
+                                <li>Ensure this setting is <strong>disabled</strong></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="config-item">
+                            <h4>Quality of Service (QoS)</h4>
+                            <p>Configure QoS to prioritize streaming traffic:</p>
+                            <ul>
+                                <li>Enable QoS in router settings</li>
+                                <li>Set video streaming as high priority</li>
+                                <li>Limit bandwidth for other devices if needed</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>Network Requirements</h3>
+                        <div class="network-reqs">
+                            <div class="req-item">
+                                <h4>Bandwidth</h4>
+                                <ul>
+                                    <li>HD (720p): 5 Mbps minimum</li>
+                                    <li>FHD (1080p): 10 Mbps minimum</li>
+                                    <li>UHD (4K): 25 Mbps minimum</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="req-item">
+                                <h4>Latency</h4>
+                                <ul>
+                                    <li>Local network: <5ms typical</li>
+                                    <li>Internet: <50ms for smooth streaming</li>
+                                    <li>WiFi signal: Strong (-70dBm or better)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Development -->
+                    <section id="development" class="docs-section">
+                        <h2>Development & Contributing</h2>
+                        
+                        <h3>Source Code</h3>
+                        <p>Stroku is open source and available on GitHub:</p>
+                        <ul>
+                            <li><a href="https://github.com/gabrielsmith1874/StreamBridge" target="_blank">Stroku Sender (Android)</a> - Kotlin/Android</li>
+                            <li><a href="https://github.com/gabrielsmith1874/StreamCast-Receiver" target="_blank">Stroku Receiver (Roku)</a> - BrightScript</li>
+                        </ul>
+                        
+                        <h3>Building from Source</h3>
+                        
+                        <div class="build-instructions">
+                            <h4>Android App</h4>
+                            <div class="code-snippet">
+                                <pre><code># Clone repository
+git clone https://github.com/gabrielsmith1874/StreamBridge.git
+cd StreamBridge
+
+# Open in Android Studio
+# Build → Build Bundle(s) / APK(s) → Build APK(s)</code></pre>
+                            </div>
+                            
+                            <h4>Roku Channel</h4>
+                            <div class="code-snippet">
+                                <pre><code># Clone repository
+git clone https://github.com/gabrielsmith1874/StreamCast-Receiver.git
+cd StreamCast-Receiver
+
+# Package for sideloading
+# Zip the entire directory and upload via Roku Developer Interface</code></pre>
+                            </div>
+                        </div>
+                        
+                        <h3>Contributing</h3>
+                        <p>We welcome contributions! Please:</p>
+                        <ol>
+                            <li>Fork the repository</li>
+                            <li>Create a feature branch</li>
+                            <li>Make your changes</li>
+                            <li>Test thoroughly</li>
+                            <li>Submit a pull request</li>
+                        </ol>
+                        
+                        <h3>Reporting Issues</h3>
+                        <p>Found a bug or have a feature request?</p>
+                        <ul>
+                            <li>Check existing issues on GitHub</li>
+                            <li>Create a new issue with detailed information</li>
+                            <li>Include device information and steps to reproduce</li>
+                            <li>Or email us directly: <a href="mailto:gabrielsmith1874@gmail.com">gabrielsmith1874@gmail.com</a></li>
+                        </ul>
+                    </section>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/icon.png" alt="Stroku - Stremio to Roku streaming app logo" class="footer-logo">
+                    <span class="footer-title">Stroku</span>
+                </div>
+                <div class="footer-links">
+                    <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                    <a href="terms.html" class="footer-link">Terms of Service</a>
+                    <a href="mailto:gabrielsmith1874@gmail.com" class="footer-link">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Stroku. Bridge the gap between Stremio and Roku.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/docs.js"></script>
+</body>
+</html>

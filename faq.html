@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stroku FAQ - Common Questions & Troubleshooting Guide</title>
+    <meta name="description" content="Find answers to common Stroku questions. Troubleshooting guide for Android sender app and Roku receiver channel. Setup help and technical support.">
+    <meta name="google-site-verification" content="tgZSZq9QmxiyRIkF5OPrxZ0U2ZnXHum8BI01lFsAZu0" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://stroku.netlify.app/faq.html">
+    <meta property="og:title" content="Stroku FAQ - Common Questions & Troubleshooting">
+    <meta property="og:description" content="Find answers to common Stroku questions. Troubleshooting guide for Android sender app and Roku receiver channel. Setup help and technical support.">
+    <meta property="og:image" content="https://stroku.netlify.app/assets/icon.png">
+    <meta property="og:site_name" content="Stroku">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https://stroku.netlify.app/faq.html">
+    <meta property="twitter:title" content="Stroku FAQ - Common Questions & Troubleshooting">
+    <meta property="twitter:description" content="Find answers to common Stroku questions. Troubleshooting guide for Android sender app and Roku receiver channel. Setup help and technical support.">
+    <meta property="twitter:image" content="https://stroku.netlify.app/assets/icon.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://stroku.netlify.app/faq.html">
+    
+    <!-- Structured Data for FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is Stroku?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Stroku is a pair of apps that bridge the gap between Stremio and Roku devices. It consists of Stroku Sender (Android app) and Stroku Receiver (Roku channel) that work together to stream content from Stremio to your Roku device over your local WiFi network."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I install Stroku?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Installation is a two-step process: 1) Android: Download the Stroku Sender APK from our GitHub releases and install it on your Android device. 2) Roku: Download the Stroku Receiver channel from GitHub and sideload it to your Roku device using the Roku Developer Mode."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do both devices need to be on the same WiFi network?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, both your Android device and Roku must be connected to the same WiFi network for Stroku to work. This is how the apps discover and communicate with each other."
+                }
+            }
+        ]
+    }
+    </script>
+    <link rel="icon" type="image/png" href="assets/icon.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="assets/icon.png" alt="Stroku - Stremio to Roku streaming app logo" class="nav-logo">
+                <span class="nav-title">Stroku</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="docs.html" class="nav-link">Documentation</a>
+                <a href="faq.html" class="nav-link active">FAQ</a>
+                <a href="mailto:gabrielsmith1874@gmail.com" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- FAQ Content -->
+    <section class="faq-content">
+        <div class="container">
+            <div class="section-header">
+                <h1>Frequently Asked Questions</h1>
+                <p class="section-subtitle">Find answers to common questions about Stroku</p>
+            </div>
+
+            <div class="faq-grid">
+                <!-- Getting Started -->
+                <div class="faq-category">
+                    <h2 class="category-title">
+                        <i class="fas fa-rocket"></i>
+                        Getting Started
+                    </h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What is Stroku?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Stroku is a pair of apps that bridge the gap between Stremio and Roku devices. It consists of Stroku Sender (Android app) and Stroku Receiver (Roku channel) that work together to stream content from Stremio to your Roku device over your local WiFi network.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How do I install Stroku?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Installation is a two-step process:</p>
+                            <ol>
+                                <li><strong>Android:</strong> Download the Stroku Sender APK from our GitHub releases and install it on your Android device</li>
+                                <li><strong>Roku:</strong> Download the Stroku Receiver channel from GitHub and sideload it to your Roku device using the Roku Developer Mode</li>
+                            </ol>
+                            <p>Detailed installation instructions are available in our <a href="docs.html">documentation</a>.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How do I stream from Stremio to Roku using Stroku?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>The easiest way to stream from Stremio to your Roku:</p>
+                            <ol>
+                                <li>Open <strong>Stremio</strong> and find the content you want to watch</li>
+                                <li>Click the <strong>Play</strong> button on your chosen content</li>
+                                <li>In the video player, look for <strong>"Open with external app"</strong> option</li>
+                                <li>Select <strong>"Stroku Sender"</strong> from the list of available apps</li>
+                                <li>Stroku Sender will automatically open with the streaming URL</li>
+                                <li>Select your Roku device from the list and enjoy!</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Do both devices need to be on the same WiFi network?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, both your Android device and Roku must be connected to the same WiFi network for Stroku to work. This is how the apps discover and communicate with each other.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Questions -->
+                <div class="faq-category">
+                    <h2 class="category-title">
+                        <i class="fas fa-cog"></i>
+                        Technical Questions
+                    </h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What video formats are supported?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Stroku Receiver supports multiple video formats including:</p>
+                            <ul>
+                                <li>MP4 (H.264, H.265/HEVC)</li>
+                                <li>MKV (with compatible codecs)</li>
+                                <li>WebM</li>
+                                <li>AVI (limited support)</li>
+                            </ul>
+                            <p>Resolution support: HD (720p), FHD (1080p), and UHD (4K) depending on your Roku model.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Why can't I find my Roku device?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>If the Stroku Sender can't find your Roku device, try these solutions:</p>
+                            <ol>
+                                <li>Ensure both devices are on the same WiFi network</li>
+                                <li>Make sure the Stroku Receiver channel is installed and running on your Roku</li>
+                                <li>Try the "Refresh" button in the Android app</li>
+                                <li>Use the "Manual IP" option and enter your Roku's IP address manually</li>
+                                <li>Check if your router has AP isolation enabled (this blocks device communication)</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How do I find my Roku's IP address?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>To find your Roku's IP address:</p>
+                            <ol>
+                                <li>Go to Roku Settings → Network → About</li>
+                                <li>Look for "IP Address" in the network information</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What is Developer Mode and how do I enable it?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Developer Mode allows you to sideload custom channels like Stroku Receiver. To enable it:</p>
+                            <ol>
+                                <li>Create a free Roku developer account at <a href="https://developer.roku.com" target="_blank">developer.roku.com</a></li>
+                                <li>On your Roku, go to Settings → System → Advanced system settings → Developer options</li>
+                                <li>Select "Installer" and follow the prompts</li>
+                                <li>You'll get an IP address and login credentials for uploading channels</li>
+                            </ol>
+                            <p>See our <a href="docs.html">documentation</a> for detailed setup instructions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Troubleshooting -->
+                <div class="faq-category">
+                    <h2 class="category-title">
+                        <i class="fas fa-wrench"></i>
+                        Troubleshooting
+                    </h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>The video won't play or keeps buffering</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>If you're experiencing playback issues:</p>
+                            <ul>
+                                <li>Check your WiFi signal strength on both devices</li>
+                                <li>Try a lower quality/resolution video</li>
+                                <li>Ensure no other devices are using heavy bandwidth</li>
+                                <li>Move closer to your WiFi router</li>
+                                <li>Try using a 5GHz WiFi network if available</li>
+                                <li>Restart both the Android app and Roku channel</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>The app crashes or stops working</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>If either app crashes or becomes unresponsive:</p>
+                            <ol>
+                                <li>Close and restart the Android app</li>
+                                <li>Go to Roku Home and relaunch the Stroku Receiver channel</li>
+                                <li>Check if you're using the latest version of both apps</li>
+                                <li>Restart your Roku device (Settings → System → Power → System restart)</li>
+                                <li>If problems persist, contact support with details about your setup</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Can I use this with other streaming apps besides Stremio?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Stroku is specifically designed for Stremio content. While it might work with other apps that provide direct video URLs, it's not officially supported or tested with other streaming services.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Privacy & Legal -->
+                <div class="faq-category">
+                    <h2 class="category-title">
+                        <i class="fas fa-shield-alt"></i>
+                        Privacy & Legal
+                    </h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Is my data being collected or sent anywhere?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>No. Stroku operates entirely on your local network. No data is collected, stored, or transmitted to external servers. All communication happens directly between your Android device and Roku over your WiFi network.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Is Stroku legal to use?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Stroku itself is legal software that simply streams content from one device to another on your network. However, you are responsible for ensuring you have the right to stream any content you choose to stream. Always respect copyright laws and content licensing agreements.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Is the source code available?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! Stroku is open source software. You can view, audit, and contribute to the source code on GitHub:</p>
+                            <ul>
+                                <li><a href="https://github.com/gabrielsmith1874/StreamBridge" target="_blank">Stroku Sender (Android)</a></li>
+                                <li><a href="https://github.com/gabrielsmith1874/StreamCast-Receiver" target="_blank">Stroku Receiver (Roku)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="faq-contact">
+                <div class="contact-card">
+                    <h3>Still have questions?</h3>
+                    <p>If you can't find the answer you're looking for, feel free to reach out to us.</p>
+                    <a href="mailto:gabrielsmith1874@gmail.com" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i>
+                        Contact Support
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/icon.png" alt="Stroku - Stremio to Roku streaming app logo" class="footer-logo">
+                    <span class="footer-title">Stroku</span>
+                </div>
+                <div class="footer-links">
+                    <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                    <a href="terms.html" class="footer-link">Terms of Service</a>
+                    <a href="mailto:gabrielsmith1874@gmail.com" class="footer-link">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Stroku. Bridge the gap between Stremio and Roku.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/faq.js"></script>
+</body>
+</html>

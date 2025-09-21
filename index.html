@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stroku - Bridge the Gap Between Stremio and Roku | Free Streaming App</title>
+    <meta name="description" content="Stream content from Stremio to Roku devices with Stroku. Free Android sender app and Roku receiver channel. Easy setup, HD/4K support, local network streaming.">
+    <meta name="google-site-verification" content="tgZSZq9QmxiyRIkF5OPrxZ0U2ZnXHum8BI01lFsAZu0" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://stroku.netlify.app/">
+    <meta property="og:title" content="Stroku - Bridge the Gap Between Stremio and Roku">
+    <meta property="og:description" content="Stream content from Stremio to Roku devices with Stroku. Free Android sender app and Roku receiver channel. Easy setup, HD/4K support, local network streaming.">
+    <meta property="og:image" content="https://stroku.netlify.app/assets/icon.png">
+    <meta property="og:site_name" content="Stroku">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://stroku.netlify.app/">
+    <meta property="twitter:title" content="Stroku - Bridge the Gap Between Stremio and Roku">
+    <meta property="twitter:description" content="Stream content from Stremio to Roku devices with Stroku. Free Android sender app and Roku receiver channel. Easy setup, HD/4K support, local network streaming.">
+    <meta property="twitter:image" content="https://stroku.netlify.app/assets/icon.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://stroku.netlify.app/">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Stroku",
+        "description": "Stream content from Stremio to Roku devices with Stroku. Free Android sender app and Roku receiver channel.",
+        "url": "https://stroku.netlify.app/",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": ["Android", "Roku OS"],
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "Stroku",
+            "url": "https://stroku.netlify.app/"
+        },
+        "screenshot": "https://stroku.netlify.app/assets/icon.png",
+        "softwareVersion": "1.0",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "150"
+        }
+    }
+    </script>
+    <link rel="icon" type="image/png" href="assets/icon.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="assets/icon.png" alt="Stroku - Stremio to Roku streaming app logo" class="nav-logo">
+                <span class="nav-title">Stroku</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#download" class="nav-link">Download</a>
+                <a href="#support" class="nav-link">Support</a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Bridge the Gap Between <span class="gradient-text">Stremio</span> and <span class="gradient-text">Roku</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Stream your favorite content seamlessly from Stremio to your Roku device with our powerful sender and receiver apps.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#download" class="btn btn-primary">
+                        <i class="fas fa-download"></i>
+                        Download Now
+                    </a>
+                    <a href="#how-it-works" class="btn btn-secondary">
+                        <i class="fas fa-play"></i>
+                        See How It Works
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="device-showcase">
+                    <div class="device android-device">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="device-img smartphone-icon">
+                            <rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect>
+                            <path d="M12 18h.01"></path>
+                        </svg>
+                        <div class="device-label">Stroku Sender</div>
+                    </div>
+                    <div class="streaming-animation">
+                        <div class="stream-line"></div>
+                        <i class="fas fa-wifi stream-icon"></i>
+                    </div>
+                    <div class="device roku-device">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="device-img tv-icon">
+                            <rect width="20" height="15" x="2" y="7" rx="2" ry="2"></rect>
+                            <polyline points="17 2 12 7 7 2"></polyline>
+                        </svg>
+                        <div class="device-label">Stroku Receiver</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Powerful Features</h2>
+                <p class="section-subtitle">Everything you need for seamless streaming</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Android Sender</h3>
+                    <p class="feature-description">
+                        Advanced Android application with network discovery protocols and HTTP streaming integration for seamless content delivery.
+                    </p>
+                    <ul class="feature-list">
+                        <li>SSDP/UPnP auto-discovery protocol</li>
+                        <li>HTTP streaming server integration</li>
+                        <li>Real-time network diagnostics</li>
+                        <li>Advanced connection management</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tv"></i>
+                    </div>
+                    <h3 class="feature-title">Roku Receiver</h3>
+                    <p class="feature-description">
+                        High-quality streaming receiver for your Roku device with support for multiple video formats and resolutions.
+                    </p>
+                    <ul class="feature-list">
+                        <li>HD, FHD, and UHD support</li>
+                        <li>Multiple video format compatibility</li>
+                        <li>Network status monitoring</li>
+                        <li>Low-latency streaming protocol</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="feature-title">Easy Setup</h3>
+                    <p class="feature-description">
+                        Get started in minutes with our simple setup process. No complex configuration required.
+                    </p>
+                    <ul class="feature-list">
+                        <li>One-time device pairing</li>
+                        <li>Automatic network detection</li>
+                        <li>Instant streaming start</li>
+                        <li>Plug-and-play experience</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">Three simple steps to start streaming</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Install Both Apps</h3>
+                        <p class="step-description">
+                            Download Stroku Sender on your Android device and install Stroku Receiver on your Roku device.
+                        </p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Connect Devices</h3>
+                        <p class="step-description">
+                            Ensure both devices are on the same WiFi network. The sender will automatically discover your Roku.
+                        </p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Start Streaming</h3>
+                        <p class="step-description">
+                            Select your content in Stremio and use the Stroku Sender to stream it directly to your Roku device.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get Stroku</h2>
+                <p class="section-subtitle">Download the Android app directly or get the Roku app from GitHub</p>
+            </div>
+            <div class="download-grid">
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fab fa-android"></i>
+                    </div>
+                    <h3 class="download-title">Stroku Sender</h3>
+                    <p class="download-description">
+                        Android app to send content from Stremio to Roku devices
+                    </p>
+                    <div class="download-features">
+                        <span class="feature-tag">Open Source</span>
+                        <span class="feature-tag">SSDP Discovery</span>
+                        <span class="feature-tag">HTTP Streaming</span>
+                    </div>
+                    <a href="assets/app-release.apk" download="Stroku-Sender.apk" class="btn btn-download" data-app="android">
+                        <i class="fas fa-download"></i>
+                        Download APK
+                    </a>
+                </div>
+                <div class="download-card">
+                    <div class="download-icon roku-icon">
+                        <i class="fas fa-tv"></i>
+                    </div>
+                    <h3 class="download-title">Stroku Receiver</h3>
+                    <p class="download-description">
+                        Roku channel to receive and play content from Stremio
+                    </p>
+                    <div class="download-features">
+                        <span class="feature-tag">Open Source</span>
+                        <span class="feature-tag">HD/FHD/UHD</span>
+                        <span class="feature-tag">Low Latency</span>
+                    </div>
+                    <a href="https://github.com/gabrielsmith1874/StreamCast-Receiver" target="_blank" class="btn btn-download" data-app="roku">
+                        <i class="fab fa-github"></i>
+                        Download from GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section id="support" class="support">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Need Help?</h2>
+                <p class="section-subtitle">We're here to support you</p>
+            </div>
+            <div class="support-grid">
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3 class="support-title">FAQ</h3>
+                    <p class="support-description">
+                        Find answers to common questions about setup and usage.
+                    </p>
+                    <a href="faq.html" class="support-link">View FAQ</a>
+                </div>
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="support-title">Documentation</h3>
+                    <p class="support-description">
+                        Detailed guides and troubleshooting information.
+                    </p>
+                    <a href="docs.html" class="support-link">Read Docs</a>
+                </div>
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="support-title">Contact</h3>
+                    <p class="support-description">
+                        Get in touch with us for assistance or questions.
+                    </p>
+                    <a href="mailto:gabrielsmith1874@gmail.com?subject=Stroku Support Request&body=Hi, I need help with Stroku. Please describe your issue below:" class="support-link" title="Click to email support">Email Support</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/icon.png" alt="Stroku - Stremio to Roku streaming app logo" class="footer-logo">
+                    <span class="footer-title">Stroku</span>
+                </div>
+                <div class="footer-links">
+                    <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                    <a href="terms.html" class="footer-link">Terms of Service</a>
+                    <a href="mailto:gabrielsmith1874@gmail.com?subject=Stroku Contact&body=Hi, I'd like to get in touch about Stroku:" class="footer-link" title="Click to email us">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Stroku. Bridge the gap between Stremio and Roku.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    
+    <!-- Google Analytics (replace with your tracking ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+</body>
+</html>

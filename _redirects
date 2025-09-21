@@ -1,0 +1,8 @@
+# Netlify redirects file
+# This ensures proper routing for your website
+
+# Redirect root to index.html (though it should work by default)
+/ /index.html 200
+
+# Handle any 404s by redirecting to index.html
+/* /index.html 404
