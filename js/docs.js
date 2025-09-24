@@ -202,8 +202,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Collapsible sidebar on mobile
     function setupMobileSidebar() {
+        const sidebar = document.querySelector('.docs-sidebar');
+        if (!sidebar) return;
+        
         if (window.innerWidth <= 768) {
-            const sidebar = document.querySelector('.docs-sidebar');
             const toggleButton = document.createElement('button');
             
             toggleButton.innerHTML = '<i class="fas fa-bars"></i> Table of Contents';
@@ -220,11 +222,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 cursor: pointer;
                 font-weight: 600;
                 transition: var(--transition);
+                font-size: 0.9rem;
             `;
             
             toggleButton.addEventListener('click', function() {
                 const nav = sidebar.querySelector('.docs-nav');
-                if (nav.style.display === 'none') {
+                if (nav.style.display === 'none' || nav.style.display === '') {
                     nav.style.display = 'block';
                     this.innerHTML = '<i class="fas fa-times"></i> Close';
                 } else {
@@ -235,9 +238,20 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Initially hide nav on mobile
             const nav = sidebar.querySelector('.docs-nav');
-            nav.style.display = 'none';
-            
-            sidebar.insertBefore(toggleButton, nav);
+            if (nav) {
+                nav.style.display = 'none';
+                sidebar.insertBefore(toggleButton, nav);
+            }
+        } else {
+            // Show nav on desktop
+            const nav = sidebar.querySelector('.docs-nav');
+            const toggleButton = sidebar.querySelector('.mobile-toc-toggle');
+            if (nav) {
+                nav.style.display = 'block';
+            }
+            if (toggleButton) {
+                toggleButton.remove();
+            }
         }
     }
     
@@ -298,4 +312,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     addBreadcrumbs();
+    
+    // Handle window resize for responsive behavior
+    window.addEventListener('resize', function() {
+        setupMobileSidebar();
+        
+        // Regenerate TOC on resize if needed
+        if (window.innerWidth > 768 && !document.querySelector('.table-of-contents')) {
+            generateTableOfContents();
+        } else if (window.innerWidth <= 768) {
+            const toc = document.querySelector('.table-of-contents');
+            if (toc) {
+                toc.remove();
+            }
+        }
+    });
 });

@@ -1545,6 +1545,36 @@ body {
     color: var(--text-secondary);
 }
 
+/* Features Detailed Grid */
+.features-detailed {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.feature-detail {
+    background: var(--surface-dark);
+    padding: 2rem;
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--border-color);
+}
+
+.feature-detail h3 {
+    color: var(--accent-purple);
+    margin-bottom: 1rem;
+}
+
+.feature-detail ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.feature-detail li {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
 .troubleshoot-item {
     background: var(--surface-light);
     border-radius: var(--border-radius);
@@ -1675,6 +1705,43 @@ body {
         text-align: center;
     }
     
+    /* Docs Mobile Layout */
+    .docs-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 20px;
+    }
+    
+    .docs-sidebar {
+        position: static;
+        order: 2;
+        margin-top: 2rem;
+    }
+    
+    .docs-main {
+        order: 1;
+        padding: 1.5rem;
+    }
+    
+    .docs-header h1 {
+        font-size: 2rem;
+    }
+    
+    .docs-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .docs-section h3 {
+        font-size: 1.25rem;
+    }
+    
+    .component-grid,
+    .requirements-grid,
+    .features-detailed {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
     .footer-content {
         flex-direction: column;
         gap: 1rem;
@@ -1722,5 +1789,61 @@ body {
         font-size: 1rem;
         padding: 0.875rem 1.5rem;
         min-width: 180px;
+    }
+    
+    /* Docs Mobile Small Screens */
+    .docs-main {
+        padding: 1rem;
+    }
+    
+    .docs-header h1 {
+        font-size: 1.75rem;
+    }
+    
+    .docs-section h2 {
+        font-size: 1.25rem;
+    }
+    
+    .docs-section h3 {
+        font-size: 1.125rem;
+    }
+    
+    .docs-section h4 {
+        font-size: 1rem;
+    }
+    
+    .docs-sidebar {
+        padding: 1rem;
+    }
+    
+    .code-block,
+    .code-snippet {
+        overflow-x: auto;
+        margin: 1rem 0;
+    }
+    
+    .code-block pre,
+    .code-snippet pre {
+        font-size: 0.875rem;
+        padding: 1rem;
+        overflow-x: auto;
+    }
+    
+    .install-steps {
+        gap: 1rem;
+    }
+    
+    .install-step {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .step-number {
+        margin-bottom: 1rem;
+    }
+    
+    .troubleshoot-item,
+    .config-item {
+        margin-bottom: 1.5rem;
     }
 }
