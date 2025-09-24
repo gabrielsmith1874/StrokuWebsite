@@ -95,6 +95,12 @@
             color: var(--text-primary);
             font-size: 1rem;
             transition: border-color 0.3s ease;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 1rem;
+            padding-right: 2.5rem;
         }
         
         .form-group input:focus,
@@ -103,6 +109,12 @@
             outline: none;
             border-color: var(--accent-purple);
             box-shadow: 0 0 0 3px rgba(123, 44, 191, 0.1);
+        }
+        
+        .form-group select option {
+            background: var(--background-surface);
+            color: var(--text-primary);
+            padding: 0.5rem;
         }
         
         .form-group textarea {
@@ -213,7 +225,7 @@
                 <a href="faq.html" class="nav-link">FAQ</a>
                 <a href="docs.html" class="nav-link">Docs</a>
             </div>
-            <div class="nav-toggle">
+            <div class="nav-toggle" onclick="toggleMobileNav()">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -357,5 +369,29 @@
 
     <script src="js/script.js"></script>
     <script src="js/contact-netlify.js"></script>
+    <script>
+        // Mobile navigation toggle
+        function toggleMobileNav() {
+            const navLinks = document.querySelector('.nav-links');
+            const navToggle = document.querySelector('.nav-toggle');
+            
+            navLinks.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        }
+        
+        // Ensure navigation works on contact page
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Contact page loaded');
+            
+            // Add click handlers for navigation links
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    console.log('Navigation link clicked:', this.href);
+                    // Let the default behavior work
+                });
+            });
+        });
+    </script>
 </body>
 </html>
