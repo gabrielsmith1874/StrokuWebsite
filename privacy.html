@@ -30,7 +30,16 @@
             </div>
             <div class="nav-links">
                 <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#features" class="nav-link">Features</a>
+                <a href="index.html#download" class="nav-link">Download</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+                <a href="docs.html" class="nav-link">Docs</a>
                 <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </nav>
@@ -90,5 +99,23 @@
             </div>
         </div>
     </footer>
+    <script>
+        // Mobile navigation toggle
+        function toggleMobileNav() {
+            const navLinks = document.querySelector('.nav-links');
+            const navToggle = document.querySelector('.nav-toggle');
+            
+            navLinks.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        }
+        
+        // Add click handler to mobile toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.querySelector('.nav-toggle');
+            if (navToggle) {
+                navToggle.addEventListener('click', toggleMobileNav);
+            }
+        });
+    </script>
 </body>
 </html>
