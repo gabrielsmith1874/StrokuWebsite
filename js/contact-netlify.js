@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
             netlifyFormData.append('subject', formData.subject);
             netlifyFormData.append('message', formData.message);
             
-            // Submit to Netlify Forms
+            // Submit to Netlify Forms using the correct endpoint
             const response = await fetch('/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -123,25 +123,45 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (response.ok) {
                 showSuccess();
+                console.log('Form submitted successfully to Netlify Forms');
             } else {
-                throw new Error('Failed to submit form');
+                console.error('Form submission failed:', response.status, response.statusText);
+                throw new Error(`Failed to submit form: ${response.status}`);
             }
             
         } catch (error) {
             console.error('Form submission error:', error);
             
-            // Fallback: try to open email client with pre-filled content
-            const mailtoLink = `mailto:gabrielsmith1874@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
-                `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-            )}`;
+            // Show specific error message based on the error
+            let errorMsg = 'Unable to send email. ';
             
-            // Try to open email client
+            if (error.message.includes('Failed to submit form')) {
+                errorMsg += 'The form submission failed. This might be a temporary issue with Netlify Forms. ';
+            } else if (error.message.includes('NetworkError') || error.message.includes('fetch')) {
+                errorMsg += 'Network error occurred. Please check your internet connection. ';
+            } else {
+                errorMsg += 'An unexpected error occurred. ';
+            }
+            
+            errorMsg += 'Please try again or contact us directly at gabrielsmith1874@gmail.com';
+            
+            showError(errorMsg);
+            
+            // Fallback: try to open email client with pre-filled content
             try {
-                window.location.href = mailtoLink;
-                showSuccess();
+                const mailtoLink = `mailto:gabrielsmith1874@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+                    `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+                )}`;
+                
+                // Show a message that email client will open
+                setTimeout(() => {
+                    if (confirm('Would you like to open your email client to send the message manually?')) {
+                        window.location.href = mailtoLink;
+                    }
+                }, 2000);
+                
             } catch (mailtoError) {
                 console.error('Mailto Error:', mailtoError);
-                showError('Unable to send email. Please try again or contact us directly at gabrielsmith1874@gmail.com');
             }
         } finally {
             setLoading(false);
@@ -242,4 +262,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     console.log('Contact form initialized successfully');
+    
+    // Debug: Log form element and Netlify attributes
+    console.log('Form element:', contactForm);
+    console.log('Form name attribute:', contactForm.getAttribute('name'));
+    console.log('Netlify attribute:', contactForm.hasAttribute('netlify'));
+    console.log('Honeypot attribute:', contactForm.getAttribute('netlify-honeypot'));
 });

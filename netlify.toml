@@ -1,6 +1,21 @@
 [build]
   publish = "."
 
+# Netlify Forms configuration
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
+
 # Redirects for clean URLs and SEO
 [[redirects]]
   from = "/docs"
