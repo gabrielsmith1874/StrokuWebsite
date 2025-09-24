@@ -110,8 +110,7 @@
                         <h3>Roku Channel</h3>
                         <ul>
                             <li><a href="#roku-setup" class="docs-nav-link">Setup</a></li>
-                            <li><a href="#roku-developer" class="docs-nav-link">Developer Mode</a></li>
-                            <li><a href="#roku-sideload" class="docs-nav-link">Sideloading</a></li>
+                            <li><a href="#roku-install" class="docs-nav-link">Channel Store Installation</a></li>
                         </ul>
                         
                         <h3>Advanced</h3>
@@ -184,7 +183,7 @@
                                 <ul>
                                     <li>Roku OS 9.0 or higher</li>
                                     <li>WiFi connectivity (same network as Android)</li>
-                                    <li>Developer Mode enabled</li>
+                                    <li>Access to Roku Channel Store</li>
                                     <li>HD, FHD, or UHD supported models</li>
                                 </ul>
                             </div>
@@ -210,21 +209,13 @@
                             <div class="install-step">
                                 <div class="step-number">1</div>
                                 <div class="step-content">
-                                    <h3>Enable Roku Developer Mode</h3>
-                                    <p>Required for sideloading the Stroku Receiver channel</p>
+                                    <h3>Install Stroku Receiver on Roku</h3>
+                                    <p>Search for "Stroku Receiver" in the Roku Channel Store and install it</p>
                                 </div>
                             </div>
                             
                             <div class="install-step">
                                 <div class="step-number">2</div>
-                                <div class="step-content">
-                                    <h3>Install Stroku Receiver on Roku</h3>
-                                    <p>Sideload the channel using Roku Developer tools</p>
-                                </div>
-                            </div>
-                            
-                            <div class="install-step">
-                                <div class="step-number">3</div>
                                 <div class="step-content">
                                     <h3>Install Stroku Sender on Android</h3>
                                     <p>Download and install the APK on your device</p>
@@ -232,7 +223,7 @@
                             </div>
                             
                             <div class="install-step">
-                                <div class="step-number">4</div>
+                                <div class="step-number">3</div>
                                 <div class="step-content">
                                     <h3>Connect and Test</h3>
                                     <p>Ensure both apps can discover and communicate</p>
@@ -387,69 +378,47 @@
                     <!-- Roku Setup -->
                     <section id="roku-setup" class="docs-section">
                         <h2>Roku Channel Setup</h2>
-                        <p>Setting up the Roku channel requires enabling Developer Mode and sideloading the channel.</p>
+                        <p>Installing Stroku Receiver is now easier than ever - it's available directly from the official Roku Channel Store!</p>
                         
-                        <div class="warning-box">
-                            <i class="fas fa-exclamation-triangle"></i>
-                            <strong>Important:</strong> You need a free Roku Developer account to sideload channels. This is completely free and takes just a few minutes to set up.
+                        <div class="success-box">
+                            <i class="fas fa-check-circle"></i>
+                            <strong>Great News:</strong> No developer mode, sideloading, or technical setup required. Just search and install from the Channel Store!
                         </div>
                     </section>
 
-                    <!-- Roku Developer Mode -->
-                    <section id="roku-developer" class="docs-section">
-                        <h2>Enabling Developer Mode</h2>
+                    <!-- Roku Channel Store Installation -->
+                    <section id="roku-install" class="docs-section">
+                        <h2>Installing from Roku Channel Store</h2>
                         
-                        <h3>Create Developer Account</h3>
+                        <h3>Step 1: Navigate to Channel Store</h3>
                         <ol>
-                            <li>Go to <a href="https://developer.roku.com" target="_blank">developer.roku.com</a></li>
-                            <li>Click <strong>"Sign Up"</strong> and create a free account</li>
-                            <li>Verify your email address</li>
-                            <li>Complete your developer profile</li>
+                            <li>On your Roku device, go to the home screen</li>
+                            <li>Select <strong>"Streaming Channels"</strong> from the menu</li>
+                            <li>Choose <strong>"Search Channels"</strong></li>
                         </ol>
                         
-                        <h3>Enable Developer Mode on Roku</h3>
+                        <h3>Step 2: Search for Stroku Receiver</h3>
                         <ol>
-                            <li>On your Roku, go to <strong>Settings → System → Advanced system settings</strong></li>
-                            <li>Select <strong>"Developer options"</strong></li>
-                            <li>Select <strong>"Installer"</strong></li>
-                            <li>Follow the prompts to enable Developer Mode</li>
-                            <li>Note down the IP address and credentials shown</li>
+                            <li>Type <strong>"Stroku Receiver"</strong> in the search box</li>
+                            <li>Select the Stroku Receiver channel from the results</li>
+                            <li>Review the channel details and screenshots</li>
                         </ol>
                         
-                        <div class="info-box">
-                            <i class="fas fa-info-circle"></i>
-                            <strong>Note:</strong> Developer Mode will display an IP address (like 192.168.1.100) and login credentials. You'll need these for sideloading.
-                        </div>
-                    </section>
-
-                    <!-- Roku Sideloading -->
-                    <section id="roku-sideload" class="docs-section">
-                        <h2>Sideloading Stroku Receiver</h2>
-                        
-                        <h3>Download Channel Package</h3>
+                        <h3>Step 3: Install the Channel</h3>
                         <ol>
-                            <li>Search for "Stroku Receiver" in the Roku Channel Store:</li>
-                            <li>Go to your Roku device and navigate to the Channel Store</li>
-                            <li>Search for "Stroku Receiver" and install it directly</li>
-                                <i class="fas fa-download"></i>
-                                Download Stroku Receiver
-                            </a></li>
-                            <li>Extract the ZIP file if needed</li>
-                        </ol>
-                        
-                        <h3>Upload via Web Interface</h3>
-                        <ol>
-                            <li>Open a web browser on your computer</li>
-                            <li>Navigate to your Roku's IP address (e.g., http://192.168.1.100)</li>
-                            <li>Log in with the credentials from Developer Mode setup</li>
-                            <li>Click <strong>"Browse"</strong> and select the Stroku Receiver package</li>
-                            <li>Click <strong>"Install"</strong> and wait for completion</li>
-                            <li>The channel will appear on your Roku home screen</li>
+                            <li>Click <strong>"Add Channel"</strong></li>
+                            <li>Wait for the installation to complete</li>
+                            <li>The channel will automatically appear on your Roku home screen</li>
                         </ol>
                         
                         <div class="success-box">
                             <i class="fas fa-check-circle"></i>
                             <strong>Success!</strong> Once installed, launch the Stroku Receiver channel on your Roku. It should display "Ready to Cast" and show your network information.
+                        </div>
+                        
+                        <div class="info-box">
+                            <i class="fas fa-info-circle"></i>
+                            <strong>Note:</strong> The Stroku Receiver channel is completely free and works on all Roku devices running Roku OS 9.0 or higher.
                         </div>
                     </section>
 
