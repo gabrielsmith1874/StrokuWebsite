@@ -15,16 +15,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const allNavLinks = document.querySelectorAll('.nav-link');
     allNavLinks.forEach(link => {
         link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
             // For anchor links on the same page, use smooth scrolling
-            if (this.getAttribute('href').startsWith('#')) {
+            if (href.startsWith('#')) {
                 e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
+                const targetId = href.substring(1);
                 const targetElement = document.getElementById(targetId);
                 if (targetElement) {
                     targetElement.scrollIntoView({ behavior: 'smooth' });
                 }
             }
-            // For other links, let the default behavior work
+            // For links to other pages, ensure they work
+            else if (href.includes('.html') || href.includes('index.html')) {
+                // Let the default behavior work - navigate to the page
+                console.log('Navigating to:', href);
+            }
+            // For all other links, let default behavior work
         });
     });
     
