@@ -62,6 +62,120 @@
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* FAQ Page Background Animations */
+        .faq-content {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .faq-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 15% 25%, rgba(123, 44, 191, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 85% 75%, rgba(157, 78, 221, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(199, 125, 255, 0.04) 0%, transparent 70%);
+            pointer-events: none;
+            animation: faqBackgroundPulse 10s ease-in-out infinite;
+            z-index: 0;
+        }
+        
+        .faq-content::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 75% 25%, rgba(123, 44, 191, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 25% 85%, rgba(157, 78, 221, 0.07) 0%, transparent 50%);
+            pointer-events: none;
+            animation: faqBackgroundFloat 14s ease-in-out infinite reverse;
+            z-index: 0;
+        }
+        
+        @keyframes faqBackgroundPulse {
+            0%, 100% { 
+                opacity: 0.3; 
+                transform: scale(1); 
+            }
+            50% { 
+                opacity: 0.6; 
+                transform: scale(1.03); 
+            }
+        }
+        
+        @keyframes faqBackgroundFloat {
+            0%, 100% { 
+                transform: translateY(0px); 
+                opacity: 0.2; 
+            }
+            50% { 
+                transform: translateY(-25px); 
+                opacity: 0.5; 
+            }
+        }
+        
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* FAQ Floating Particles */
+        .faq-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .faq-particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: linear-gradient(45deg, var(--primary-purple), var(--accent-purple));
+            border-radius: 50%;
+            opacity: 0.4;
+            animation: faqFloatUp 25s infinite linear;
+        }
+        
+        .faq-particle:nth-child(1) { left: 8%; animation-delay: 0s; animation-duration: 20s; }
+        .faq-particle:nth-child(2) { left: 18%; animation-delay: 4s; animation-duration: 22s; }
+        .faq-particle:nth-child(3) { left: 28%; animation-delay: 8s; animation-duration: 18s; }
+        .faq-particle:nth-child(4) { left: 38%; animation-delay: 2s; animation-duration: 24s; }
+        .faq-particle:nth-child(5) { left: 48%; animation-delay: 6s; animation-duration: 19s; }
+        .faq-particle:nth-child(6) { left: 58%; animation-delay: 10s; animation-duration: 21s; }
+        .faq-particle:nth-child(7) { left: 68%; animation-delay: 3s; animation-duration: 23s; }
+        .faq-particle:nth-child(8) { left: 78%; animation-delay: 7s; animation-duration: 17s; }
+        .faq-particle:nth-child(9) { left: 88%; animation-delay: 1s; animation-duration: 25s; }
+        
+        @keyframes faqFloatUp {
+            0% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.4;
+            }
+            90% {
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -87,6 +201,19 @@
 
     <!-- FAQ Content -->
     <section class="faq-content">
+        <!-- FAQ Floating Particles -->
+        <div class="faq-particles">
+            <div class="faq-particle"></div>
+            <div class="faq-particle"></div>
+            <div class="faq-particle"></div>
+            <div class="faq-particle"></div>
+            <div class="faq-particle"></div>
+            <div class="faq-particle"></div>
+            <div class="faq-particle"></div>
+            <div class="faq-particle"></div>
+            <div class="faq-particle"></div>
+        </div>
+        
         <div class="container">
             <div class="section-header">
                 <h1>Frequently Asked Questions</h1>

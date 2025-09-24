@@ -63,6 +63,134 @@
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Docs Page Background Animations */
+        .docs-content {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .docs-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(123, 44, 191, 0.07) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(157, 78, 221, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 60% 20%, rgba(199, 125, 255, 0.03) 0%, transparent 70%);
+            pointer-events: none;
+            animation: docsBackgroundPulse 12s ease-in-out infinite;
+            z-index: 0;
+        }
+        
+        .docs-content::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 70% 40%, rgba(123, 44, 191, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 30% 80%, rgba(157, 78, 221, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+            animation: docsBackgroundFloat 16s ease-in-out infinite reverse;
+            z-index: 0;
+        }
+        
+        @keyframes docsBackgroundPulse {
+            0%, 100% { 
+                opacity: 0.2; 
+                transform: scale(1); 
+            }
+            50% { 
+                opacity: 0.5; 
+                transform: scale(1.02); 
+            }
+        }
+        
+        @keyframes docsBackgroundFloat {
+            0%, 100% { 
+                transform: translateY(0px); 
+                opacity: 0.15; 
+            }
+            50% { 
+                transform: translateY(-30px); 
+                opacity: 0.4; 
+            }
+        }
+        
+        .docs-layout {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Docs Floating Particles */
+        .docs-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .docs-particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: linear-gradient(45deg, var(--primary-purple), var(--accent-purple));
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: docsFloatUp 30s infinite linear;
+        }
+        
+        .docs-particle:nth-child(1) { left: 12%; animation-delay: 0s; animation-duration: 24s; }
+        .docs-particle:nth-child(2) { left: 24%; animation-delay: 5s; animation-duration: 26s; }
+        .docs-particle:nth-child(3) { left: 36%; animation-delay: 10s; animation-duration: 20s; }
+        .docs-particle:nth-child(4) { left: 48%; animation-delay: 3s; animation-duration: 28s; }
+        .docs-particle:nth-child(5) { left: 60%; animation-delay: 8s; animation-duration: 22s; }
+        .docs-particle:nth-child(6) { left: 72%; animation-delay: 13s; animation-duration: 25s; }
+        .docs-particle:nth-child(7) { left: 84%; animation-delay: 2s; animation-duration: 27s; }
+        .docs-particle:nth-child(8) { left: 96%; animation-delay: 7s; animation-duration: 21s; }
+        
+        @keyframes docsFloatUp {
+            0% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+        }
+        
+        /* Enhanced sidebar and main content styling */
+        .docs-sidebar {
+            background: rgba(26, 26, 46, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(199, 125, 255, 0.1);
+        }
+        
+        .docs-main {
+            background: rgba(26, 26, 46, 0.6);
+            backdrop-filter: blur(5px);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            border: 1px solid rgba(199, 125, 255, 0.05);
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -88,6 +216,18 @@
 
     <!-- Documentation Content -->
     <section class="docs-content">
+        <!-- Docs Floating Particles -->
+        <div class="docs-particles">
+            <div class="docs-particle"></div>
+            <div class="docs-particle"></div>
+            <div class="docs-particle"></div>
+            <div class="docs-particle"></div>
+            <div class="docs-particle"></div>
+            <div class="docs-particle"></div>
+            <div class="docs-particle"></div>
+            <div class="docs-particle"></div>
+        </div>
+        
         <div class="container">
             <div class="docs-layout">
                 <!-- Sidebar Navigation -->
