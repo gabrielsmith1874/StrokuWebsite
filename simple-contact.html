@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Test - Stroku</title>
+    <title>Simple Contact Test - Stroku</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -55,19 +55,11 @@
     </style>
 </head>
 <body>
-    <h1>Netlify Forms Test</h1>
-    <p>This is a simple test to verify Netlify Forms functionality.</p>
+    <h1>Simple Contact Form Test</h1>
+    <p>This form submits directly to Netlify without JavaScript to test if the issue is with AJAX handling.</p>
     
-    <div id="success-message" class="message success" style="display: none;">
-        ✅ Form submitted successfully! Check your Netlify dashboard for the submission.
-    </div>
-    
-    <div id="error-message" class="message error" style="display: none;">
-        ❌ There was an error submitting the form.
-    </div>
-    
-    <!-- Simple Netlify Form -->
-    <form name="test-form" method="POST" netlify netlify-honeypot="bot-field" id="test-form">
+    <!-- Simple Netlify Form - No JavaScript -->
+    <form name="simple-contact" method="POST" netlify netlify-honeypot="bot-field">
         <!-- Honeypot field -->
         <div style="display: none;">
             <label>Don't fill this out if you're human: <input name="bot-field" /></label>
@@ -84,43 +76,33 @@
         </div>
         
         <div class="form-group">
+            <label for="subject">Subject:</label>
+            <select id="subject" name="subject" required>
+                <option value="">Select a subject</option>
+                <option value="General Question">General Question</option>
+                <option value="Technical Support">Technical Support</option>
+                <option value="Feature Request">Feature Request</option>
+                <option value="Bug Report">Bug Report</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
             <label for="message">Message:</label>
             <textarea id="message" name="message" rows="4" required></textarea>
         </div>
         
-        <button type="submit">Submit Test Form</button>
+        <button type="submit">Submit Form</button>
     </form>
     
-    <script>
-        document.getElementById('test-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            const successMessage = document.getElementById('success-message');
-            const errorMessage = document.getElementById('error-message');
-            
-            // Hide previous messages
-            successMessage.style.display = 'none';
-            errorMessage.style.display = 'none';
-            
-            fetch('/', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(formData).toString()
-            })
-            .then(response => {
-                if (response.ok) {
-                    successMessage.style.display = 'block';
-                    this.reset();
-                } else {
-                    throw new Error('Form submission failed');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                errorMessage.style.display = 'block';
-            });
-        });
-    </script>
+    <div style="margin-top: 30px; padding: 20px; background: #2a2a4e; border-radius: 8px;">
+        <h3>Testing Instructions:</h3>
+        <ol>
+            <li>Fill out and submit this form</li>
+            <li>Check your Netlify dashboard for the "simple-contact" form</li>
+            <li>If this works but the main contact form doesn't, the issue is with JavaScript</li>
+            <li>If this doesn't work either, the issue is with Netlify Forms configuration</li>
+        </ol>
+    </div>
 </body>
 </html>

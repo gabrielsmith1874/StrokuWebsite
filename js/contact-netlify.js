@@ -114,6 +114,14 @@ document.addEventListener('DOMContentLoaded', function() {
             netlifyFormData.append('subject', formData.subject);
             netlifyFormData.append('message', formData.message);
             
+            console.log('Submitting form data:', {
+                'form-name': 'contact',
+                name: formData.name,
+                email: formData.email,
+                subject: formData.subject,
+                message: formData.message.substring(0, 50) + '...'
+            });
+            
             // Submit to Netlify Forms using the correct endpoint
             const response = await fetch('/', {
                 method: 'POST',
@@ -121,12 +129,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 body: new URLSearchParams(netlifyFormData).toString()
             });
             
+            console.log('Response status:', response.status);
+            console.log('Response ok:', response.ok);
+            
             if (response.ok) {
                 showSuccess();
                 console.log('Form submitted successfully to Netlify Forms');
             } else {
-                console.error('Form submission failed:', response.status, response.statusText);
-                throw new Error(`Failed to submit form: ${response.status}`);
+                const responseText = await response.text();
+                console.error('Form submission failed:', response.status, response.statusText, responseText);
+                throw new Error(`Failed to submit form: ${response.status} - ${response.statusText}`);
             }
             
         } catch (error) {
