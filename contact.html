@@ -18,89 +18,267 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    
     <style>
+        /* Contact Page Specific Styles */
         .contact-hero {
             background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
-            padding: 6rem 0 4rem;
+            padding: 8rem 0 6rem;
             text-align: center;
             color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .contact-hero .container {
+            position: relative;
+            z-index: 1;
         }
         
         .contact-hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.8));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .contact-hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
         }
         
-        .contact-section {
-            padding: 4rem 0;
-        }
-        
-        .contact-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+        .contact-stats {
+            display: flex;
+            justify-content: center;
             gap: 3rem;
             margin-top: 3rem;
         }
         
-        .contact-form {
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .contact-main {
+            padding: 6rem 0;
+            background: var(--background-dark);
+        }
+        
+        .contact-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        
+        .contact-sidebar {
+            position: sticky;
+            top: 120px;
+        }
+        
+        .contact-methods {
             background: var(--surface-dark);
-            padding: 2rem;
             border-radius: var(--border-radius-lg);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            background: var(--background-dark);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .contact-method:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-purple);
+            box-shadow: 0 8px 25px rgba(123, 44, 191, 0.15);
+        }
+        
+        .contact-method:last-child {
+            margin-bottom: 0;
+        }
+        
+        .method-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            font-size: 1.2rem;
+            color: white;
+        }
+        
+        .method-content h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .method-content p {
+            color: var(--text-secondary);
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        
+        .support-hours {
+            background: var(--surface-dark);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .support-hours h3 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .hours-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .hour-item {
+            background: var(--background-dark);
+            padding: 1rem;
+            border-radius: var(--border-radius);
             border: 1px solid var(--border-color);
         }
         
-        .contact-info {
+        .hour-item .day {
+            color: var(--accent-purple);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .hour-item .time {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        
+        .contact-form-section {
             background: var(--surface-dark);
-            padding: 2rem;
             border-radius: var(--border-radius-lg);
             border: 1px solid var(--border-color);
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-form-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-purple), var(--accent-purple));
+        }
+        
+        .form-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        
+        .form-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
         }
         
         .form-group {
             margin-bottom: 1.5rem;
         }
         
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+        
         .form-group label {
             display: block;
             color: var(--text-primary);
             font-weight: 500;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
         }
         
         .form-group input,
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 0.75rem;
-            border: 1px solid var(--border-color);
+            padding: 1rem 1.25rem;
+            border: 2px solid var(--border-color);
             border-radius: var(--border-radius);
-            background: var(--background-surface);
+            background: var(--background-dark);
             color: var(--text-primary);
             font-size: 1rem;
-            transition: border-color 0.3s ease;
-            appearance: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
-            background-repeat: no-repeat;
-            background-position: right 0.75rem center;
-            background-size: 1rem;
-            padding-right: 2.5rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
         }
         
         .form-group input:focus,
@@ -109,34 +287,63 @@
             outline: none;
             border-color: var(--accent-purple);
             box-shadow: 0 0 0 3px rgba(123, 44, 191, 0.1);
-        }
-        
-        .form-group select option {
-            background: var(--background-surface);
-            color: var(--text-primary);
-            padding: 0.5rem;
+            background: var(--surface-dark);
         }
         
         .form-group textarea {
             resize: vertical;
-            min-height: 120px;
+            min-height: 140px;
+            font-family: inherit;
+        }
+        
+        .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1rem;
+            padding-right: 3rem;
+        }
+        
+        .form-group select option {
+            background: var(--background-dark);
+            color: var(--text-primary);
+            padding: 0.5rem;
         }
         
         .btn-submit {
             background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
             color: white;
             border: none;
-            padding: 1rem 2rem;
+            padding: 1.25rem 3rem;
             border-radius: var(--border-radius);
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: transform 0.2s ease;
+            transition: all 0.3s ease;
             width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-submit::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
         }
         
         .btn-submit:hover {
             transform: translateY(-2px);
+            box-shadow: 0 8px 25px var(--shadow-color);
+        }
+        
+        .btn-submit:hover::before {
+            left: 100%;
         }
         
         .btn-submit:disabled {
@@ -145,53 +352,174 @@
             transform: none;
         }
         
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            background: var(--background-surface);
-            border-radius: var(--border-radius);
-            border: 1px solid var(--border-color);
-        }
-        
-        .contact-item i {
-            font-size: 1.5rem;
-            color: var(--accent-purple);
-            margin-right: 1rem;
-            width: 2rem;
-            text-align: center;
-        }
-        
-        .contact-item-content h4 {
-            color: var(--text-primary);
-            margin-bottom: 0.25rem;
-            font-weight: 600;
-        }
-        
-        .contact-item-content p {
-            color: var(--text-secondary);
-            margin: 0;
+        .btn-submit i {
+            margin-right: 0.5rem;
         }
         
         .success-message,
         .error-message {
-            padding: 1rem;
+            padding: 1.25rem 1.5rem;
             border-radius: var(--border-radius);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             display: none;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 500;
         }
         
         .success-message {
-            background: rgba(76, 175, 80, 0.1);
-            border: 1px solid rgba(76, 175, 80, 0.3);
-            color: #4CAF50;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #10B981;
         }
         
         .error-message {
-            background: rgba(244, 67, 54, 0.1);
-            border: 1px solid rgba(244, 67, 54, 0.3);
-            color: #F44336;
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #EF4444;
+        }
+        
+        .faq-preview {
+            background: var(--surface-dark);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .faq-preview h3 {
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .faq-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            color: var(--text-primary);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            color: var(--accent-purple);
+        }
+        
+        .faq-answer {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .quick-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .quick-link {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            background: var(--background-dark);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            color: var(--text-secondary);
+            text-decoration: none;
+            text-align: center;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .quick-link:hover {
+            color: var(--accent-purple);
+            border-color: var(--accent-purple);
+            background: rgba(123, 44, 191, 0.05);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .contact-layout {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .contact-sidebar {
+                position: static;
+                order: 2;
+            }
+            
+            .contact-form-section {
+                order: 1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .contact-hero {
+                padding: 6rem 0 4rem;
+            }
+            
+            .contact-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .contact-stats {
+                gap: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hours-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-main {
+                padding: 4rem 0;
+            }
+            
+            .contact-form-section {
+                padding: 2rem;
+            }
+            
+            .quick-links {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .contact-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .contact-container {
+                padding: 0 1rem;
+            }
         }
         
         /* Ensure navigation links are clickable */
@@ -205,21 +533,6 @@
         .nav-links {
             pointer-events: auto !important;
             z-index: 1000 !important;
-        }
-        
-        @media (max-width: 768px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .contact-hero h1 {
-                font-size: 2rem;
-            }
-            
-            .contact-hero p {
-                font-size: 1rem;
-            }
         }
     </style>
 </head>
@@ -248,25 +561,123 @@
     <!-- Contact Hero -->
     <section class="contact-hero">
         <div class="container">
-            <h1>Contact Us</h1>
-            <p>We're here to help! Get in touch with our support team for any questions about Stroku or assistance with setup and troubleshooting.</p>
+            <h1>Get in Touch</h1>
+            <p>We're here to help you get the most out of Stroku. Whether you need setup assistance, have technical questions, or want to share feedback, our support team is ready to assist you.</p>
+            
+            <div class="contact-stats">
+                <div class="stat-item">
+                    <span class="stat-number">&lt;24h</span>
+                    <span class="stat-label">Response Time</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Free Support</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Community Help</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section">
+    <!-- Contact Main -->
+    <section class="contact-main">
         <div class="contact-container">
-            <div class="contact-grid">
+            <div class="contact-layout">
+                <!-- Sidebar -->
+                <aside class="contact-sidebar">
+                    <div class="contact-methods">
+                        <h3 style="color: var(--text-primary); margin-bottom: 1.5rem; font-size: 1.3rem;">Contact Methods</h3>
+                        
+                        <div class="contact-method" onclick="window.location.href='mailto:gabrielsmith1874@gmail.com'">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-content">
+                                <h4>Email Support</h4>
+                                <p>gabrielsmith1874@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method" onclick="window.open('https://github.com/gabrielsmith1874/StreamBridge/issues', '_blank')">
+                            <div class="method-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="method-content">
+                                <h4>GitHub Issues</h4>
+                                <p>Report bugs & feature requests</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method" onclick="window.open('https://github.com/gabrielsmith1874/StreamCast-Receiver/issues', '_blank')">
+                            <div class="method-icon">
+                                <i class="fas fa-tv"></i>
+                            </div>
+                            <div class="method-content">
+                                <h4>Roku Channel Issues</h4>
+                                <p>Specific Roku app problems</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="support-hours">
+                        <h3>Support Hours</h3>
+                        <div class="hours-grid">
+                            <div class="hour-item">
+                                <div class="day">Mon - Fri</div>
+                                <div class="time">9 AM - 6 PM EST</div>
+                            </div>
+                            <div class="hour-item">
+                                <div class="day">Weekend</div>
+                                <div class="time">10 AM - 4 PM EST</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-preview">
+                        <h3>
+                            <i class="fas fa-question-circle"></i>
+                            Quick Help
+                        </h3>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">Can't find my Roku device?</div>
+                            <div class="faq-answer">Make sure both devices are on the same WiFi network and try the manual IP option.</div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">Video won't play or buffers?</div>
+                            <div class="faq-answer">Check your network connection and try a lower quality video source.</div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">How do I enable Developer Mode?</div>
+                            <div class="faq-answer">Go to Roku Settings → System → Advanced system settings → Developer options.</div>
+                        </div>
+                        
+                        <div class="quick-links">
+                            <a href="faq.html" class="quick-link">View All FAQs</a>
+                            <a href="docs.html" class="quick-link">Setup Guide</a>
+                        </div>
+                    </div>
+                </aside>
+                
                 <!-- Contact Form -->
-                <div class="contact-form">
-                    <h2 style="color: var(--text-primary); margin-bottom: 1.5rem; font-size: 1.8rem;">Send us a Message</h2>
+                <main class="contact-form-section">
+                    <div class="form-header">
+                        <h2>Send us a Message</h2>
+                        <p>Fill out the form below and we'll get back to you as soon as possible</p>
+                    </div>
                     
                     <div id="success-message" class="success-message">
-                        <i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully. We'll get back to you soon.
+                        <i class="fas fa-check-circle"></i>
+                        <span>Thank you! Your message has been sent successfully. We'll get back to you soon.</span>
                     </div>
                     
                     <div id="error-message" class="error-message">
-                        <i class="fas fa-exclamation-circle"></i> Sorry, there was an error sending your message. Please try again or email us directly.
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span>Sorry, there was an error sending your message. Please try again or email us directly.</span>
                     </div>
                     
                     <form id="contact-form" name="contact" netlify netlify-honeypot="bot-field">
@@ -275,86 +686,42 @@
                             <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                         </div>
                         
-                        <div class="form-group">
-                            <label for="name">Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                            </div>
                         </div>
                         
                         <div class="form-group">
                             <label for="subject">Subject *</label>
                             <select id="subject" name="subject" required>
                                 <option value="">Select a subject</option>
-                                <option value="General Question">General Question</option>
                                 <option value="Setup Help">Setup Help</option>
                                 <option value="Technical Issue">Technical Issue</option>
-                                <option value="Feature Request">Feature Request</option>
                                 <option value="Bug Report">Bug Report</option>
+                                <option value="Feature Request">Feature Request</option>
+                                <option value="General Question">General Question</option>
                                 <option value="Other">Other</option>
                             </select>
                         </div>
                         
-                        <div class="form-group">
+                        <div class="form-group full-width">
                             <label for="message">Message *</label>
-                            <textarea id="message" name="message" placeholder="Please describe your question or issue in detail..." required></textarea>
+                            <textarea id="message" name="message" placeholder="Please describe your question or issue in detail. Include your device model, OS version, and any error messages you're seeing..." required></textarea>
                         </div>
                         
                         <button type="submit" class="btn-submit" id="submit-btn">
-                            <i class="fas fa-paper-plane"></i> Send Message
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
                         </button>
                     </form>
-                </div>
-                
-                <!-- Contact Information -->
-                <div class="contact-info">
-                    <h2 style="color: var(--text-primary); margin-bottom: 1.5rem; font-size: 1.8rem;">Get in Touch</h2>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div class="contact-item-content">
-                            <h4>Email Support</h4>
-                            <p>gabrielsmith1874@gmail.com</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <div class="contact-item-content">
-                            <h4>Response Time</h4>
-                            <p>Usually within 24 hours</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-question-circle"></i>
-                        <div class="contact-item-content">
-                            <h4>Common Questions</h4>
-                            <p>Check our <a href="faq.html" style="color: var(--accent-purple);">FAQ page</a> first</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-book"></i>
-                        <div class="contact-item-content">
-                            <h4>Documentation</h4>
-                            <p>Read our <a href="docs.html" style="color: var(--accent-purple);">setup guides</a></p>
-                        </div>
-                    </div>
-                    
-                    <div style="margin-top: 2rem; padding: 1.5rem; background: var(--background-surface); border-radius: var(--border-radius); border: 1px solid var(--border-color);">
-                        <h4 style="color: var(--text-primary); margin-bottom: 1rem;">Quick Tips</h4>
-                        <ul style="color: var(--text-secondary); margin: 0; padding-left: 1.5rem;">
-                            <li>Include your device model and OS version</li>
-                            <li>Describe the exact steps you took</li>
-                            <li>Mention any error messages you see</li>
-                            <li>Check that both devices are on the same WiFi</li>
-                        </ul>
-                    </div>
-                </div>
+                </main>
             </div>
         </div>
     </section>
