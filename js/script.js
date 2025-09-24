@@ -353,6 +353,84 @@ function initializeContactSupport() {
     console.log(`Initialized ${mailtoLinks.length} contact links`);
 }
 
+// Roku Store information modal
+function showRokuStoreInfo() {
+    const modal = document.createElement('div');
+    modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        backdrop-filter: blur(10px);
+    `;
+    
+    const modalContent = document.createElement('div');
+    modalContent.style.cssText = `
+        background: var(--surface-dark);
+        padding: 2rem;
+        border-radius: var(--border-radius-lg);
+        border: 1px solid var(--border-color);
+        text-align: center;
+        max-width: 500px;
+        margin: 1rem;
+        box-shadow: 0 20px 60px rgba(123, 44, 191, 0.3);
+    `;
+    
+    modalContent.innerHTML = `
+        <div style="margin-bottom: 1.5rem;">
+            <i class="fas fa-tv" style="font-size: 3rem; color: var(--accent-purple); margin-bottom: 1rem;"></i>
+        </div>
+        <h3 style="color: var(--text-primary); margin-bottom: 1rem; font-size: 1.8rem;">Stroku Receiver</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6;">
+            Search for "Stroku Receiver" in the Roku Channel Store on your Roku device to install the app.
+        </p>
+        <div style="background: var(--background-surface); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; text-align: left;">
+            <h4 style="color: var(--text-primary); margin-bottom: 1rem; font-size: 1.1rem;">How to install:</h4>
+            <ol style="color: var(--text-secondary); margin: 0; padding-left: 1.5rem; line-height: 1.6;">
+                <li>Go to the Roku Channel Store on your Roku device</li>
+                <li>Search for "Stroku Receiver"</li>
+                <li>Select the Stroku Receiver channel</li>
+                <li>Click "Add Channel" to install</li>
+                <li>Launch the channel from your Roku home screen</li>
+            </ol>
+        </div>
+        <p style="color: var(--text-hint); font-size: 0.9rem; margin-bottom: 1.5rem;">
+            The Stroku Receiver is free and available on all Roku devices.
+        </p>
+        <button onclick="this.closest('[style*=\"position: fixed\"]').remove()" 
+                style="background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple)); 
+                       color: white; border: none; padding: 12px 24px; border-radius: 8px; 
+                       cursor: pointer; font-weight: 600; transition: transform 0.2s;">
+            Got it!
+        </button>
+    `;
+    
+    modal.appendChild(modalContent);
+    document.body.appendChild(modal);
+    
+    // Close on backdrop click
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.remove();
+        }
+    });
+    
+    // Close on Escape key
+    const handleEscape = function(e) {
+        if (e.key === 'Escape') {
+            modal.remove();
+            document.removeEventListener('keydown', handleEscape);
+        }
+    };
+    document.addEventListener('keydown', handleEscape);
+}
+
 // Fallback function to show email address if mailto fails
 function showEmailFallback() {
     const modal = document.createElement('div');
