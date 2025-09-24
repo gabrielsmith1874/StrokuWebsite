@@ -237,8 +237,9 @@
                 <a href="index.html#download" class="nav-link">Download</a>
                 <a href="faq.html" class="nav-link">FAQ</a>
                 <a href="docs.html" class="nav-link">Docs</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
             </div>
-            <div class="nav-toggle" onclick="toggleMobileNav()">
+            <div class="nav-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -380,30 +381,7 @@
         </div>
     </footer>
 
+    <script src="js/script.js"></script>
     <script src="js/contact-netlify.js"></script>
-    <script>
-        // Mobile navigation toggle
-        function toggleMobileNav() {
-            const navLinks = document.querySelector('.nav-links');
-            const navToggle = document.querySelector('.nav-toggle');
-            
-            navLinks.classList.toggle('active');
-            navToggle.classList.toggle('active');
-        }
-        
-        // Simple navigation fix
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Contact page loaded - navigation should work');
-            
-            // Ensure all navigation links work
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    console.log('Navigating to:', this.href);
-                    // Allow default navigation behavior
-                });
-            });
-        });
-    </script>
 </body>
 </html>

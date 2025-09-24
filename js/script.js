@@ -11,6 +11,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Ensure all navigation links work properly
+    const allNavLinks = document.querySelectorAll('.nav-link');
+    allNavLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // For anchor links on the same page, use smooth scrolling
+            if (this.getAttribute('href').startsWith('#')) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+            // For other links, let the default behavior work
+        });
+    });
+    
     // Smooth scrolling for anchor links with sliding indicator
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
     const navLinksContainer = document.querySelector('.nav-links');
