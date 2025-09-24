@@ -200,39 +200,47 @@ document.addEventListener('DOMContentLoaded', function() {
         generateTableOfContents();
     }
     
-    // Collapsible sidebar on mobile
+    // Mobile sidebar with improved design
     function setupMobileSidebar() {
         const sidebar = document.querySelector('.docs-sidebar');
         if (!sidebar) return;
         
         if (window.innerWidth <= 768) {
-            const toggleButton = document.createElement('button');
+            // Remove existing toggle if present
+            const existingToggle = sidebar.querySelector('.mobile-toc-toggle');
+            if (existingToggle) {
+                existingToggle.remove();
+            }
             
-            toggleButton.innerHTML = '<i class="fas fa-bars"></i> Table of Contents';
+            const toggleButton = document.createElement('button');
+            toggleButton.innerHTML = '<i class="fas fa-list"></i> Navigation';
             toggleButton.className = 'mobile-toc-toggle';
             toggleButton.style.cssText = `
                 display: block;
                 width: 100%;
-                background: var(--surface-dark);
-                border: 1px solid var(--border-color);
-                color: var(--text-primary);
-                padding: 12px 16px;
+                background: var(--primary-purple);
+                border: none;
+                color: white;
+                padding: 16px;
                 border-radius: var(--border-radius);
                 margin-bottom: 1rem;
                 cursor: pointer;
                 font-weight: 600;
                 transition: var(--transition);
-                font-size: 0.9rem;
+                font-size: 1rem;
+                box-shadow: 0 2px 8px rgba(123, 44, 191, 0.3);
             `;
             
             toggleButton.addEventListener('click', function() {
                 const nav = sidebar.querySelector('.docs-nav');
                 if (nav.style.display === 'none' || nav.style.display === '') {
                     nav.style.display = 'block';
-                    this.innerHTML = '<i class="fas fa-times"></i> Close';
+                    this.innerHTML = '<i class="fas fa-times"></i> Close Navigation';
+                    this.style.background = 'var(--secondary-purple)';
                 } else {
                     nav.style.display = 'none';
-                    this.innerHTML = '<i class="fas fa-bars"></i> Table of Contents';
+                    this.innerHTML = '<i class="fas fa-list"></i> Navigation';
+                    this.style.background = 'var(--primary-purple)';
                 }
             });
             

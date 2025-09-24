@@ -1229,22 +1229,29 @@ body {
     z-index: 2;
 }
 
+/* Mobile-first docs layout */
 .docs-layout {
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    gap: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .docs-sidebar {
-    position: sticky;
-    top: 140px;
-    height: fit-content;
+    order: 2;
     background: var(--surface-dark);
     border-radius: var(--border-radius-lg);
     border: 1px solid var(--border-color);
-    padding: 2rem 1.5rem;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.docs-main {
+    order: 1;
+    width: 100%;
+    min-width: 0;
 }
 
 .docs-nav h3 {
@@ -1285,28 +1292,27 @@ body {
     background: rgba(199, 125, 255, 0.1);
 }
 
-.docs-main {
-    min-width: 0;
-}
-
 .docs-header {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
 .docs-header h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
     margin-bottom: 1rem;
+    line-height: 1.2;
 }
 
 .docs-header p {
-    font-size: 1.125rem;
+    font-size: 1rem;
     color: var(--text-secondary);
+    line-height: 1.5;
 }
 
 .docs-section {
-    margin-bottom: 4rem;
-    padding-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -1315,24 +1321,27 @@ body {
 }
 
 .docs-section h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: var(--accent-purple);
     position: relative;
+    line-height: 1.3;
 }
 
 .docs-section h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 600;
-    margin: 2rem 0 1rem;
+    margin: 1.5rem 0 0.75rem;
+    line-height: 1.3;
 }
 
 .docs-section h4 {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-weight: 600;
-    margin: 1.5rem 0 1rem;
+    margin: 1.25rem 0 0.75rem;
     color: var(--accent-purple);
+    line-height: 1.3;
 }
 
 .docs-section p {
@@ -1364,10 +1373,10 @@ body {
 }
 
 .component-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
 }
 
 .component-card {
@@ -1391,10 +1400,10 @@ body {
 }
 
 .requirements-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
 }
 
 .requirement-item {
@@ -1422,9 +1431,11 @@ body {
 
 .install-step {
     display: flex;
-    align-items: flex-start;
-    gap: 2rem;
-    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.5rem;
     background: var(--surface-light);
     border-radius: var(--border-radius-lg);
     border: 1px solid var(--border-color);
@@ -1437,18 +1448,19 @@ body {
 }
 
 .install-step .step-number {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    font-size: 1.5rem;
-    color: var(--text-primary);
+    font-size: 1.25rem;
+    color: white;
     flex-shrink: 0;
-    box-shadow: 0 8px 32px rgba(123, 44, 191, 0.3);
+    margin-bottom: 0.5rem;
+    box-shadow: 0 4px 16px rgba(123, 44, 191, 0.3);
 }
 
 .step-content {
@@ -1545,12 +1557,12 @@ body {
     color: var(--text-secondary);
 }
 
-/* Features Detailed Grid */
+/* Features Detailed Grid - Mobile First */
 .features-detailed {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
 }
 
 .feature-detail {
@@ -1705,41 +1717,36 @@ body {
         text-align: center;
     }
     
-    /* Docs Mobile Layout */
+    /* Mobile optimizations */
+    .docs-content {
+        padding: 80px 0 2rem;
+    }
+    
     .docs-layout {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 0 20px;
+        padding: 0 0.5rem;
+        gap: 1.5rem;
     }
     
     .docs-sidebar {
-        position: static;
-        order: 2;
-        margin-top: 2rem;
-    }
-    
-    .docs-main {
-        order: 1;
-        padding: 1.5rem;
+        padding: 1rem;
     }
     
     .docs-header h1 {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
     
     .docs-section h2 {
-        font-size: 1.5rem;
+        font-size: 1.375rem;
     }
     
     .docs-section h3 {
-        font-size: 1.25rem;
+        font-size: 1.125rem;
     }
     
-    .component-grid,
-    .requirements-grid,
-    .features-detailed {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+    .component-card,
+    .requirement-item,
+    .feature-detail {
+        padding: 1.25rem;
     }
     
     .footer-content {
@@ -1845,5 +1852,76 @@ body {
     .troubleshoot-item,
     .config-item {
         margin-bottom: 1.5rem;
+    }
+}
+
+/* Desktop Styles - Override mobile-first design */
+@media (min-width: 769px) {
+    .docs-layout {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 3rem;
+        padding: 0 2rem;
+    }
+    
+    .docs-sidebar {
+        order: 1;
+        position: sticky;
+        top: 140px;
+        height: fit-content;
+        padding: 2rem 1.5rem;
+        margin-top: 0;
+    }
+    
+    .docs-main {
+        order: 2;
+    }
+    
+    .docs-header {
+        text-align: left;
+    }
+    
+    .docs-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .docs-header p {
+        font-size: 1.125rem;
+    }
+    
+    .docs-section h2 {
+        font-size: 2rem;
+    }
+    
+    .docs-section h3 {
+        font-size: 1.5rem;
+    }
+    
+    .docs-section h4 {
+        font-size: 1.25rem;
+    }
+    
+    .component-grid,
+    .requirements-grid,
+    .features-detailed {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+    
+    .install-step {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+        gap: 2rem;
+        padding: 2rem;
+    }
+    
+    .install-step .step-number {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        margin-bottom: 0;
+        flex-shrink: 0;
     }
 }
