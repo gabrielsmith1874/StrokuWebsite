@@ -582,28 +582,6 @@
             margin-right: 0.5rem;
         }
         
-        .success-message,
-        .error-message {
-            padding: 1.25rem 1.5rem;
-            border-radius: var(--border-radius);
-            margin-bottom: 1.5rem;
-            display: none;
-            align-items: center;
-            gap: 0.75rem;
-            font-weight: 500;
-        }
-        
-        .success-message {
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            color: #10B981;
-        }
-        
-        .error-message {
-            background: rgba(239, 68, 68, 0.1);
-            border: 1px solid rgba(239, 68, 68, 0.3);
-            color: #EF4444;
-        }
         
         .faq-preview {
             background: var(--surface-dark);
@@ -912,17 +890,8 @@
                         <p>Fill out the form below and we'll get back to you as soon as possible</p>
                     </div>
                     
-                    <div id="success-message" class="success-message">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Thank you! Your message has been sent successfully. We'll get back to you soon.</span>
-                    </div>
                     
-                    <div id="error-message" class="error-message">
-                        <i class="fas fa-exclamation-circle"></i>
-                        <span>Sorry, there was an error sending your message. Please try again or email us directly.</span>
-                    </div>
-                    
-                    <form id="contact-form" name="contact" method="POST" netlify netlify-honeypot="bot-field" action="/contact-success">
+                    <form name="contact" method="POST" netlify netlify-honeypot="bot-field" action="/contact-success">
                         <!-- Honeypot field for spam protection -->
                         <div style="display: none;">
                             <label>Don't fill this out if you're human: <input name="bot-field" /></label>
@@ -989,6 +958,5 @@
     </footer>
 
     <script src="js/script.js"></script>
-    <script src="js/contact-netlify.js"></script>
 </body>
 </html>
