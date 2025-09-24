@@ -194,6 +194,19 @@
             color: #F44336;
         }
         
+        /* Ensure navigation links are clickable */
+        .nav-link {
+            pointer-events: auto !important;
+            cursor: pointer !important;
+            z-index: 1000 !important;
+            position: relative !important;
+        }
+        
+        .nav-links {
+            pointer-events: auto !important;
+            z-index: 1000 !important;
+        }
+        
         @media (max-width: 768px) {
             .contact-grid {
                 grid-template-columns: 1fr;
@@ -367,7 +380,6 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
     <script src="js/contact-netlify.js"></script>
     <script>
         // Mobile navigation toggle
@@ -379,16 +391,16 @@
             navToggle.classList.toggle('active');
         }
         
-        // Ensure navigation works on contact page
+        // Simple navigation fix
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('Contact page loaded');
+            console.log('Contact page loaded - navigation should work');
             
-            // Add click handlers for navigation links
+            // Ensure all navigation links work
             const navLinks = document.querySelectorAll('.nav-link');
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
-                    console.log('Navigation link clicked:', this.href);
-                    // Let the default behavior work
+                    console.log('Navigating to:', this.href);
+                    // Allow default navigation behavior
                 });
             });
         });
