@@ -37,6 +37,11 @@
   to = "/privacy.html"
   status = 301
 
+[[redirects]]
+  from = "/contact-success"
+  to = "/contact-success.html"
+  status = 301
+
 # Force HTTPS redirects
 [[redirects]]
   from = "http://stroku.netlify.app/*"

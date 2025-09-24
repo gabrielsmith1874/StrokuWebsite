@@ -106,13 +106,13 @@ document.addEventListener('DOMContentLoaded', function() {
         setLoading(true);
         
         try {
-            // Create FormData for Netlify Forms
-            const netlifyFormData = new FormData();
-            netlifyFormData.append('form-name', 'contact');
-            netlifyFormData.append('name', formData.name);
-            netlifyFormData.append('email', formData.email);
-            netlifyFormData.append('subject', formData.subject);
-            netlifyFormData.append('message', formData.message);
+            // Create URL-encoded form data for Netlify Forms
+            const formDataEncoded = new URLSearchParams();
+            formDataEncoded.append('form-name', 'contact');
+            formDataEncoded.append('name', formData.name);
+            formDataEncoded.append('email', formData.email);
+            formDataEncoded.append('subject', formData.subject);
+            formDataEncoded.append('message', formData.message);
             
             console.log('Submitting form data:', {
                 'form-name': 'contact',
@@ -122,11 +122,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 message: formData.message.substring(0, 50) + '...'
             });
             
+            console.log('Encoded form data:', formDataEncoded.toString());
+            
             // Submit to Netlify Forms using the correct endpoint
             const response = await fetch('/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(netlifyFormData).toString()
+                body: formDataEncoded.toString()
             });
             
             console.log('Response status:', response.status);

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Sent Successfully - Stroku</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <img src="assets/icon.png" alt="Stroku" class="nav-logo">
+                    <span class="nav-brand-text">Stroku</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="faq.html" class="nav-link">FAQ</a>
+                <a href="docs.html" class="nav-link">Docs</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Success Message -->
+    <section class="success-content">
+        <div class="container">
+            <div class="success-card">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h1>Message Sent Successfully!</h1>
+                <p>Thank you for contacting us. We've received your message and will get back to you within 24 hours.</p>
+                
+                <div class="success-details">
+                    <div class="detail-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Response Time: &lt;24 hours</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>We'll email you at the address you provided</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-headset"></i>
+                        <span>Free support for all users</span>
+                    </div>
+                </div>
+                
+                <div class="success-actions">
+                    <a href="index.html" class="btn btn-primary">
+                        <i class="fas fa-home"></i> Back to Home
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i> Send Another Message
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .success-content {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+        
+        .success-card {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            background: var(--surface-dark);
+            border-radius: var(--border-radius-lg);
+            padding: 3rem;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .success-icon {
+            font-size: 4rem;
+            color: #4CAF50;
+            margin-bottom: 1.5rem;
+            animation: successPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes successPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .success-card h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .success-card p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .success-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background: var(--background-dark);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+        
+        .detail-item i {
+            color: var(--accent-purple);
+            width: 20px;
+        }
+        
+        .success-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: var(--primary-purple);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--accent-purple);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--surface-dark);
+            border-color: var(--accent-purple);
+        }
+        
+        @media (max-width: 768px) {
+            .success-card {
+                padding: 2rem;
+                margin: 0 1rem;
+            }
+            
+            .success-card h1 {
+                font-size: 2rem;
+            }
+            
+            .success-actions {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</body>
+</html>
