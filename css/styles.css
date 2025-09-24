@@ -880,6 +880,7 @@ body {
 .download .container {
     position: relative;
     z-index: 1;
+    text-align: center;
 }
 
 .download-content {
@@ -987,6 +988,19 @@ body {
     color: var(--text-muted);
     margin: 0;
     font-size: 0.9rem;
+}
+
+.download .section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.download .section-title {
+    text-align: center;
+}
+
+.download .section-subtitle {
+    text-align: center;
 }
 
 /* Footer */
