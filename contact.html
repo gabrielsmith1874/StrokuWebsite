@@ -93,12 +93,115 @@
         .contact-main {
             padding: 6rem 0;
             background: var(--background-dark);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-main::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(123, 44, 191, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(157, 78, 221, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(199, 125, 255, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+            animation: backgroundPulse 8s ease-in-out infinite;
+        }
+        
+        .contact-main::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 80% 30%, rgba(123, 44, 191, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 20% 70%, rgba(157, 78, 221, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+            animation: backgroundFloat 12s ease-in-out infinite reverse;
+        }
+        
+        @keyframes backgroundPulse {
+            0%, 100% { 
+                opacity: 0.3; 
+                transform: scale(1); 
+            }
+            50% { 
+                opacity: 0.6; 
+                transform: scale(1.05); 
+            }
+        }
+        
+        @keyframes backgroundFloat {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg); 
+                opacity: 0.4; 
+            }
+            50% { 
+                transform: translateY(-20px) rotate(180deg); 
+                opacity: 0.8; 
+            }
         }
         
         .contact-container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Floating Particles Animation */
+        .floating-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: linear-gradient(45deg, var(--primary-purple), var(--accent-purple));
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: floatUp 15s infinite linear;
+        }
+        
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 12s; }
+        .particle:nth-child(2) { left: 20%; animation-delay: 2s; animation-duration: 18s; }
+        .particle:nth-child(3) { left: 30%; animation-delay: 4s; animation-duration: 14s; }
+        .particle:nth-child(4) { left: 40%; animation-delay: 1s; animation-duration: 16s; }
+        .particle:nth-child(5) { left: 50%; animation-delay: 3s; animation-duration: 13s; }
+        .particle:nth-child(6) { left: 60%; animation-delay: 5s; animation-duration: 17s; }
+        .particle:nth-child(7) { left: 70%; animation-delay: 2.5s; animation-duration: 15s; }
+        .particle:nth-child(8) { left: 80%; animation-delay: 4.5s; animation-duration: 19s; }
+        .particle:nth-child(9) { left: 90%; animation-delay: 1.5s; animation-duration: 11s; }
+        
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
         }
         
         .contact-layout {
@@ -129,8 +232,25 @@
             background: var(--background-dark);
             border-radius: var(--border-radius);
             border: 1px solid var(--border-color);
-            transition: var(--transition);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-method::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(199, 125, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .contact-method:hover::before {
+            left: 100%;
         }
         
         .contact-method:hover {
@@ -583,6 +703,19 @@
 
     <!-- Contact Main -->
     <section class="contact-main">
+        <!-- Floating Particles -->
+        <div class="floating-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        
         <div class="contact-container">
             <div class="contact-layout">
                 <!-- Sidebar -->
@@ -638,26 +771,15 @@
                     <div class="faq-preview">
                         <h3>
                             <i class="fas fa-question-circle"></i>
-                            Quick Help
+                            Need Quick Answers?
                         </h3>
                         
-                        <div class="faq-item">
-                            <div class="faq-question">Can't find my Roku device?</div>
-                            <div class="faq-answer">Make sure both devices are on the same WiFi network and try the manual IP option.</div>
-                        </div>
-                        
-                        <div class="faq-item">
-                            <div class="faq-question">Video won't play or buffers?</div>
-                            <div class="faq-answer">Check your network connection and try a lower quality video source.</div>
-                        </div>
-                        
-                        <div class="faq-item">
-                            <div class="faq-question">How do I install Stroku Receiver?</div>
-                            <div class="faq-answer">Simply search for "Stroku Receiver" in the Roku Channel Store and install it like any other channel - no developer mode needed!</div>
-                        </div>
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6;">
+                            Check out our comprehensive FAQ section for instant answers to common questions about setup, troubleshooting, and usage.
+                        </p>
                         
                         <div class="quick-links">
-                            <a href="faq.html" class="quick-link">View All FAQs</a>
+                            <a href="faq.html" class="quick-link">Browse FAQ</a>
                             <a href="docs.html" class="quick-link">Setup Guide</a>
                         </div>
                     </div>
