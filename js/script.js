@@ -49,35 +49,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 updateIndicator(this);
             });
             
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Remove active class from all links
-                navLinks.forEach(l => l.classList.remove('active'));
-                // Add active class to clicked link
-                this.classList.add('active');
-                
-                updateIndicator(this);
-                
-                const targetId = this.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                
-                if (targetSection) {
-                    const navHeight = document.querySelector('.navbar').offsetHeight;
-                    const targetPosition = targetSection.offsetTop - navHeight;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (navLinksContainer.classList.contains('active')) {
-                        navLinksContainer.classList.remove('active');
-                        navToggle.classList.remove('active');
-                    }
-                }
-            });
+            // Note: Click handling is done by the main navigation event listener above
+            // This function only handles hover effects for the sliding indicator
         });
         
         // Hide indicator when mouse leaves nav area
