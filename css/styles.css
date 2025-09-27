@@ -42,6 +42,23 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Fix text squishing on Windows */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Ensure text doesn't get squished on Windows */
+h1, h2, h3, h4, h5, h6, p, span, div {
+    font-synthesis: none;
+    -webkit-font-feature-settings: "kern" 1;
+    font-feature-settings: "kern" 1;
 }
 
 .container {
@@ -1936,16 +1953,6 @@ body {
     overflow: hidden;
 }
 
-.update-notice::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
-    pointer-events: none;
-}
 
 .update-badge {
     display: inline-flex;
@@ -1958,7 +1965,6 @@ body {
     font-size: 0.875rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    backdrop-filter: blur(10px);
 }
 
 .update-notice h3 {
