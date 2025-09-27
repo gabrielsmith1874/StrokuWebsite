@@ -1979,10 +1979,11 @@ h1, h2, h3, h4, h5, h6, p, span, div {
 /* New Download Section Styles */
 .download-content-new {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
     max-width: 1000px;
     margin: 0 auto;
+    align-items: start;
 }
 
 .download-card {
@@ -1991,6 +1992,9 @@ h1, h2, h3, h4, h5, h6, p, span, div {
     border: 1px solid var(--border-color);
     padding: 2rem;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .download-header {
@@ -2039,6 +2043,7 @@ h1, h2, h3, h4, h5, h6, p, span, div {
 
 .download-features-new {
     margin: 2rem 0;
+    flex-grow: 1;
 }
 
 .feature-item {
@@ -2136,9 +2141,11 @@ h1, h2, h3, h4, h5, h6, p, span, div {
     background: var(--surface-light);
     border-radius: var(--border-radius-lg);
     border: 1px solid var(--border-color);
-    padding: 1.5rem;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-    height: fit-content;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .roku-header {
@@ -2197,6 +2204,65 @@ h1, h2, h3, h4, h5, h6, p, span, div {
     font-weight: 600;
 }
 
+.roku-features {
+    margin: 1.5rem 0;
+    flex-grow: 1;
+}
+
+.roku-feature {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem 0;
+}
+
+.roku-feature i {
+    color: var(--success);
+    font-size: 1rem;
+    width: 16px;
+    flex-shrink: 0;
+}
+
+.roku-feature.highlight {
+    background: rgba(123, 44, 191, 0.1);
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin: 0.5rem 0;
+}
+
+.roku-feature.highlight i {
+    color: var(--warning);
+}
+
+.roku-feature span {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.roku-note {
+    background: rgba(123, 44, 191, 0.05);
+    border-radius: 8px;
+    padding: 1rem;
+    border-left: 3px solid var(--accent-purple);
+    margin-top: auto;
+}
+
+.roku-note p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.roku-note i {
+    color: var(--accent-purple);
+    flex-shrink: 0;
+}
+
 /* Docs Download Card */
 .docs-download {
     margin: 1.5rem 0;
@@ -2237,6 +2303,12 @@ h1, h2, h3, h4, h5, h6, p, span, div {
     
     .download-card {
         padding: 1.5rem;
+        height: auto;
+    }
+    
+    .roku-card {
+        padding: 1.5rem;
+        height: auto;
     }
     
     .download-header {
@@ -2260,8 +2332,9 @@ h1, h2, h3, h4, h5, h6, p, span, div {
         min-width: 180px;
     }
     
-    .roku-card {
-        padding: 1.25rem;
+    .download-features-new,
+    .roku-features {
+        flex-grow: 0;
     }
 }
 
@@ -2270,8 +2343,10 @@ h1, h2, h3, h4, h5, h6, p, span, div {
         gap: 1rem;
     }
     
-    .download-card {
+    .download-card,
+    .roku-card {
         padding: 1.25rem;
+        height: auto;
     }
     
     .download-header {
@@ -2284,13 +2359,19 @@ h1, h2, h3, h4, h5, h6, p, span, div {
         align-self: center;
     }
     
-    .feature-item {
+    .feature-item,
+    .roku-feature {
         font-size: 0.9rem;
     }
     
     .download-btn {
         padding: 1rem 1.25rem;
         min-width: 160px;
+    }
+    
+    .download-features-new,
+    .roku-features {
+        flex-grow: 0;
     }
 }
 
