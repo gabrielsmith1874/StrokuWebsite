@@ -978,6 +978,25 @@ h1, h2, h3, h4, h5, h6, p, span, div {
     color: var(--text-primary);
 }
 
+.receiver-info {
+    flex-shrink: 0;
+    width: 100%;
+}
+
+.receiver-text {
+    flex-shrink: 0;
+    white-space: nowrap;
+    overflow: visible;
+}
+
+.download-note {
+    flex-shrink: 0;
+    width: 100%;
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
 .download-actions {
     text-align: center;
     padding: 2rem;
@@ -988,6 +1007,9 @@ h1, h2, h3, h4, h5, h6, p, span, div {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    min-height: auto;
+    width: 100%;
+    flex-shrink: 0;
 }
 
 .btn-download {
@@ -999,13 +1021,11 @@ h1, h2, h3, h4, h5, h6, p, span, div {
     gap: 0.5rem;
     min-width: 200px;
     justify-content: center;
+    flex-shrink: 0;
+    width: auto;
+    white-space: nowrap;
 }
 
-.download-note {
-    color: var(--text-muted);
-    margin: 0;
-    font-size: 0.9rem;
-}
 
 .download .section-header {
     text-align: center;
@@ -1813,6 +1833,19 @@ h1, h2, h3, h4, h5, h6, p, span, div {
         font-size: 1rem;
         padding: 0.875rem 1.5rem;
         min-width: 180px;
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+    
+    .download-actions {
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+    
+    .receiver-text {
+        font-size: 0.9rem;
+        white-space: normal;
+        line-height: 1.4;
     }
     
     /* Docs Mobile Small Screens */
