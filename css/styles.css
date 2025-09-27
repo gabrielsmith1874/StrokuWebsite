@@ -2138,7 +2138,7 @@ h1, h2, h3, h4, h5, h6, p, span, div {
 }
 
 .roku-card {
-    background: var(--surface-light);
+    background: var(--surface-dark);
     border-radius: var(--border-radius-lg);
     border: 1px solid var(--border-color);
     padding: 2rem;
@@ -2150,21 +2150,21 @@ h1, h2, h3, h4, h5, h6, p, span, div {
 
 .roku-header {
     display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .roku-icon {
-    width: 40px;
-    height: 40px;
-    background: var(--primary-purple);
-    border-radius: 8px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     flex-shrink: 0;
 }
 
@@ -2173,15 +2173,22 @@ h1, h2, h3, h4, h5, h6, p, span, div {
 }
 
 .roku-title {
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 700;
     color: var(--text-primary);
-    margin: 0 0 0.25rem 0;
+    margin: 0 0 0.5rem 0;
 }
 
 .roku-subtitle {
-    font-size: 0.85rem;
-    color: var(--text-muted);
+    font-size: 0.9rem;
+    color: var(--accent-purple);
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+}
+
+.roku-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
     margin: 0;
 }
 
@@ -2202,6 +2209,66 @@ h1, h2, h3, h4, h5, h6, p, span, div {
 .roku-instructions strong {
     color: var(--text-primary);
     font-weight: 600;
+}
+
+.roku-action-section {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 2rem 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.roku-store-btn {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
+    color: white;
+    padding: 1.5rem 2rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 8px 32px var(--shadow-color);
+    transition: var(--transition);
+    min-width: 200px;
+}
+
+.roku-store-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px var(--shadow-color);
+    color: white;
+    text-decoration: none;
+}
+
+.roku-store-btn i {
+    font-size: 1.5rem;
+}
+
+.roku-store-btn span {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.roku-store-btn small {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    font-weight: 400;
+}
+
+.roku-requirements {
+    margin: 1rem 0 0 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.roku-requirements i {
+    color: var(--accent-purple);
 }
 
 .roku-features {
@@ -2311,22 +2378,26 @@ h1, h2, h3, h4, h5, h6, p, span, div {
         height: auto;
     }
     
-    .download-header {
+    .download-header,
+    .roku-header {
         gap: 1rem;
         margin-bottom: 1.5rem;
     }
     
-    .app-icon {
+    .app-icon,
+    .roku-icon {
         width: 50px;
         height: 50px;
         font-size: 1.25rem;
     }
     
-    .app-title {
+    .app-title,
+    .roku-title {
         font-size: 1.25rem;
     }
     
-    .download-btn {
+    .download-btn,
+    .roku-store-btn {
         padding: 1.25rem 1.5rem;
         font-size: 1rem;
         min-width: 180px;
@@ -2335,6 +2406,11 @@ h1, h2, h3, h4, h5, h6, p, span, div {
     .download-features-new,
     .roku-features {
         flex-grow: 0;
+    }
+    
+    .roku-action-section {
+        margin: 1.5rem 0;
+        padding: 1.5rem 0;
     }
 }
 
@@ -2349,13 +2425,15 @@ h1, h2, h3, h4, h5, h6, p, span, div {
         height: auto;
     }
     
-    .download-header {
+    .download-header,
+    .roku-header {
         flex-direction: column;
         text-align: center;
         gap: 1rem;
     }
     
-    .app-icon {
+    .app-icon,
+    .roku-icon {
         align-self: center;
     }
     
