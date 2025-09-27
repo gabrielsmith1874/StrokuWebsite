@@ -1976,6 +1976,324 @@ h1, h2, h3, h4, h5, h6, p, span, div {
     }
 }
 
+/* New Download Section Styles */
+.download-content-new {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.download-card {
+    background: var(--surface-dark);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.download-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.app-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    flex-shrink: 0;
+}
+
+.app-info {
+    flex: 1;
+}
+
+.app-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 0.5rem 0;
+}
+
+.app-version {
+    font-size: 0.9rem;
+    color: var(--accent-purple);
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+}
+
+.app-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.download-features-new {
+    margin: 2rem 0;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem 0;
+}
+
+.feature-item i {
+    color: var(--success);
+    font-size: 1rem;
+    width: 16px;
+    flex-shrink: 0;
+}
+
+.feature-item.highlight {
+    background: rgba(123, 44, 191, 0.1);
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin: 0.5rem 0;
+}
+
+.feature-item.highlight i {
+    color: var(--warning);
+}
+
+.feature-item span {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.download-section {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.download-btn {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
+    color: white;
+    padding: 1.5rem 2rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 8px 32px var(--shadow-color);
+    transition: var(--transition);
+    min-width: 200px;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px var(--shadow-color);
+    color: white;
+    text-decoration: none;
+}
+
+.download-btn i {
+    font-size: 1.5rem;
+}
+
+.download-btn span {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.download-btn small {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    font-weight: 400;
+}
+
+.system-requirements {
+    margin: 1rem 0 0 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.system-requirements i {
+    color: var(--accent-purple);
+}
+
+.roku-card {
+    background: var(--surface-light);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    height: fit-content;
+}
+
+.roku-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.roku-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-purple);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.roku-info {
+    flex: 1;
+}
+
+.roku-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 0.25rem 0;
+}
+
+.roku-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.roku-instructions {
+    background: rgba(123, 44, 191, 0.05);
+    border-radius: 8px;
+    padding: 1rem;
+    border-left: 3px solid var(--primary-purple);
+}
+
+.roku-instructions p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.roku-instructions strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* Docs Download Card */
+.docs-download {
+    margin: 1.5rem 0;
+    max-width: 600px;
+}
+
+.docs-download .download-header {
+    margin-bottom: 1.5rem;
+}
+
+.docs-download .app-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+}
+
+.docs-download .app-title {
+    font-size: 1.25rem;
+}
+
+.docs-download .download-section {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+}
+
+.docs-download .download-btn {
+    padding: 1.25rem 1.75rem;
+    font-size: 1rem;
+    min-width: 180px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .download-content-new {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .download-card {
+        padding: 1.5rem;
+    }
+    
+    .download-header {
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .app-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+    
+    .app-title {
+        font-size: 1.25rem;
+    }
+    
+    .download-btn {
+        padding: 1.25rem 1.5rem;
+        font-size: 1rem;
+        min-width: 180px;
+    }
+    
+    .roku-card {
+        padding: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .download-content-new {
+        gap: 1rem;
+    }
+    
+    .download-card {
+        padding: 1.25rem;
+    }
+    
+    .download-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .app-icon {
+        align-self: center;
+    }
+    
+    .feature-item {
+        font-size: 0.9rem;
+    }
+    
+    .download-btn {
+        padding: 1rem 1.25rem;
+        min-width: 160px;
+    }
+}
+
 /* Version Update Styles */
 .update-notice {
     background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
