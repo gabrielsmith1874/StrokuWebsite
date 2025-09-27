@@ -2,6 +2,15 @@
 
 A modern, responsive website showcasing the Stroku Sender and Receiver apps.
 
+## Latest Update - v1.0.3
+
+**🎉 New Feature: Enhanced Compatibility**
+- **Works without "Control by mobile apps" setting** - No more Roku configuration needed
+- **Dual-method streaming** - Automatically tries the best method for your device  
+- **Better device compatibility** - Works on more Roku models and configurations
+
+This update makes Stroku work out-of-the-box on most Roku devices, eliminating the need to change Roku settings for better compatibility.
+
 ## Features
 
 - **Modern Design**: Clean, professional layout with purple Stremio theme
